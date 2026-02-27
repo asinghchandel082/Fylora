@@ -44,7 +44,7 @@ const Index = () => {
             </motion.div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
-              Every PDF tool, <br className="hidden md:block" />
+              Every PDF Tool, <br className="hidden md:block" />
               <span className="fylora-gradient-text">Beautifully Private.</span>
             </h1>
 
