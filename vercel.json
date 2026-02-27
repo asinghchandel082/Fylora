@@ -5,6 +5,19 @@
     "installCommand": "npm install",
     "framework": "vite",
     "outputDirectory": "dist",
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.fylora.online"
+                }
+            ],
+            "destination": "https://fylora.online/$1",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",
