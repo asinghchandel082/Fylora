@@ -45,7 +45,7 @@ const Index = () => {
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
               Every PDF tool, <br className="hidden md:block" />
-              <span className="fylora-gradient-text">beautifully private.</span>
+              <span className="fylora-gradient-text">Beautifully Private.</span>
             </h1>
 
             <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
