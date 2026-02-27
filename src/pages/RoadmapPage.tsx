@@ -42,7 +42,7 @@ const RoadmapPage = () => {
                         <div className="pt-8 border-t border-border">
                             <p>
                                 User feedback plays a key role in shaping our roadmap.
-                                Have an idea? <a href="mailto:support@betatesting" className="font-medium text-primary hover:underline">Request a feature.</a>
+                                Have an idea? <a href="mailto:fyloratech@gmail.com" className="font-medium text-primary hover:underline">Request a feature.</a>
                             </p>
                         </div>
                     </div>

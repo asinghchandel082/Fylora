@@ -54,7 +54,7 @@ const FaqPage = () => {
                         <div className="mt-16 pt-8 border-t border-border">
                             <p>
                                 Still have questions? We're here to help. <br />
-                                <a href="mailto:support@betatesting" className="font-medium text-primary hover:underline">Contact Support</a>
+                                <a href="mailto:fyloratech@gmail.com" className="font-medium text-primary hover:underline">Contact Support</a>
                             </p>
                         </div>
                     </div>

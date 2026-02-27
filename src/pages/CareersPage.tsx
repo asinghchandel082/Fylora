@@ -33,8 +33,8 @@ const CareersPage = () => {
                                 <h3 className="text-foreground font-semibold mb-1">Get in touch</h3>
                                 <p className="text-sm">Reach out to us directly:</p>
                             </div>
-                            <a href="mailto:careers@betatesting" className="font-medium text-primary hover:underline">
-                                careers@betatesting
+                            <a href="mailto:fyloratech@gmail.com" className="font-medium text-primary hover:underline">
+                                fyloratech@gmail.com
                             </a>
                         </div>
                     </div>

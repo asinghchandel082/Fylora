@@ -39,8 +39,8 @@ const PressPage = () => {
                                 <h3 className="text-foreground font-semibold mb-1">Media Inquiries</h3>
                                 <p className="text-sm m-0">For interviews, quotes, or further resources:</p>
                             </div>
-                            <a href="mailto:press@betatesting" className="font-medium text-primary hover:underline">
-                                press@betatesting
+                            <a href="mailto:fyloratech@gmail.com" className="font-medium text-primary hover:underline">
+                                fyloratech@gmail.com
                             </a>
                         </div>
                     </div>

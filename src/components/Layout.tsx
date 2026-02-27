@@ -167,7 +167,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Fylora</Link>
                 <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link>
                 <Link to="/roadmap" className="text-muted-foreground hover:text-primary transition-colors">Roadmap</Link>
-                <a href="mailto:contact@betatesting" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+                <a href="mailto:fyloratech@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
                 <Link to="/press" className="text-muted-foreground hover:text-primary transition-colors">Press</Link>
               </nav>
             </div>
