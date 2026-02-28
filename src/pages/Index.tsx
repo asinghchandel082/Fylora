@@ -47,7 +47,10 @@ const Index = () => {
 
             <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 break-words">
               Free Online PDF Tools –
-              <span className="block fylora-gradient-text">Fast & Ad-Free | Fylora</span>
+              <span className="block fylora-gradient-text">
+                <span className="block md:inline">Fast & Ad-Free</span>
+                <span className="block md:inline md:ml-3 opacity-90">by Fylora</span>
+              </span>
             </h1>
 
             <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
