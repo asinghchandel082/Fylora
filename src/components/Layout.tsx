@@ -35,22 +35,20 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       >
         <div className="container flex h-16 items-center justify-between">
           {/* Logo & Tagline (Left) */}
-          <div className="flex-1 flex justify-start">
-            <Link to="/" className="flex items-center gap-3 group shrink-0">
-              <Logo className="h-8 w-8 transition-transform group-hover:scale-105 drop-shadow-sm" />
-              <div className="flex flex-col">
-                <span className="font-display text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary leading-none mt-0.5">
-                  FYLORA
-                </span>
-                <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mt-1">
-                  Private PDF tools
-                </span>
-              </div>
-            </Link>
-          </div>
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
+            <Logo className="h-8 w-8 transition-transform group-hover:scale-105 drop-shadow-sm" />
+            <div className="flex flex-col">
+              <span className="font-display text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary leading-none mt-0.5">
+                FYLORA
+              </span>
+              <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mt-1">
+                Private PDF tools
+              </span>
+            </div>
+          </Link>
 
           {/* Navigation (Center) */}
-          <nav className="hidden md:flex flex-1 justify-center items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map(link => {
               const isActive = location.pathname === link.to;
               return (
@@ -74,7 +72,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </nav>
 
           {/* CTA & Mobile Toggle (Right) */}
-          <div className="flex-1 flex justify-end items-center gap-4 shrink-0">
+          <div className="flex items-center gap-4 shrink-0">
             <Button asChild className="hidden md:inline-flex rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 shadow-none">
               <Link to="/tools">Use Tools</Link>
             </Button>
