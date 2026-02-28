@@ -45,7 +45,7 @@ const Index = () => {
               </span>
             </motion.div>
 
-            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 break-words flex flex-col items-center text-center">
+            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-balance flex flex-col items-center text-center">
               <span>Free Online PDF Tools</span>
               <span className="block w-full text-center fylora-gradient-text mt-1 sm:mt-2">
                 Fast & Ad-Free
