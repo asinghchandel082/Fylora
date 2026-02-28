@@ -19,14 +19,14 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
+      <section className="relative overflow-hidden min-h-[75vh] flex items-center justify-center">
         {/* Animated Glow Blobs */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none animate-[pulse_8s_ease-in-out_infinite]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none animate-[pulse_10s_ease-in-out_infinite_reverse]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none animate-[pulse_8s_ease-in-out_infinite]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] opacity-30 mix-blend-screen pointer-events-none animate-[pulse_10s_ease-in-out_infinite_reverse]" />
 
         <div className="absolute inset-0 bg-[image:var(--fylora-gradient-soft)] opacity-40 dark:opacity-20" />
 
-        <div className="relative container py-20 md:py-28 z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative container pt-16 pb-16 md:pt-20 md:pb-24 z-10 max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,23 +37,23 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background border border-border shadow-sm text-sm font-medium mb-8"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-background border border-border shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] text-xs font-semibold mb-5"
             >
-              <Shield className="h-4 w-4 text-primary" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-500">
+              <Shield className="h-3.5 w-3.5 text-primary" />
+              <span className="text-muted-foreground/90">
                 100% Private & Client-Side
               </span>
             </motion.div>
 
-            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 break-words">
-              Free Online PDF Tools –
-              <span className="flex flex-col md:flex-row items-center justify-center fylora-gradient-text mt-1">
-                <span>Fast & Ad-Free</span>
-                <span className="md:ml-3 opacity-90">by Fylora</span>
-              </span>
+            <h1 className="font-display font-extrabold tracking-tight text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-3">
+              Free Online PDF Tools
             </h1>
 
-            <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            <h2 className="text-2xl md:text-3xl font-semibold fylora-gradient-text mb-6">
+              Fast & Ad-Free<span className="opacity-80 font-normal ml-2">by Fylora</span>
+            </h2>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
               Merge, split, compress, convert, and protect. The fastest PDF studio that never uploads your files to a server.
             </p>
 
