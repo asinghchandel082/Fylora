@@ -45,11 +45,11 @@ const Index = () => {
               </span>
             </motion.div>
 
-            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 break-words">
-              Free Online PDF Tools –
-              <span className="flex flex-col md:flex-row lg:block items-center justify-center fylora-gradient-text mt-1">
+            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 break-words flex flex-col items-center text-center">
+              <span>Free Online PDF Tools –</span>
+              <span className="flex flex-col md:flex-row lg:block relative items-center justify-center fylora-gradient-text mt-1 sm:mt-2">
                 <span>Fast & Ad-Free</span>
-                <span className="md:ml-3 opacity-90">by Fylora</span>
+                <span className="md:ml-3 opacity-80 lg:absolute lg:left-full lg:bottom-0 lg:ml-4 lg:whitespace-nowrap">by Fylora</span>
               </span>
             </h1>
 
