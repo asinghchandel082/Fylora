@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 import { tools } from "@/lib/tools";
 import Layout from "@/components/Layout";
-import ToolCard from "@/components/ToolCard";
+import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
+
+const ToolCard = React.lazy(() => import("@/components/ToolCard"));
 
 const features = [
   { icon: Shield, title: "Privacy First", description: "Files are processed and deleted automatically. We never store or read your content." },
@@ -109,7 +111,9 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
             >
-              <ToolCard tool={tool} />
+              <Suspense fallback={<div className="h-48 w-full bg-muted/20 animate-pulse rounded-3xl" />}>
+                <ToolCard tool={tool} />
+              </Suspense>
             </motion.div>
           ))}
         </div>
