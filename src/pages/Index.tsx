@@ -46,8 +46,8 @@ const Index = () => {
             </motion.div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 break-words">
-              Every PDF Tool, <br className="hidden md:block" />
-              <span className="fylora-gradient-text">Beautifully Private.</span>
+              Free Online PDF Tools – <br className="hidden md:block" />
+              <span className="fylora-gradient-text">Fast & Ad-Free | Fylora</span>
             </h1>
 
             <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
@@ -121,6 +121,58 @@ const Index = () => {
           <Button asChild variant="outline">
             <Link to="/tools">View All {tools.length} Tools <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="container py-24 border-t border-border">
+        <div className="max-w-4xl mx-auto prose prose-slate dark:prose-invert">
+          <h2 className="font-display text-3xl font-bold text-foreground mb-6">What is Fylora? Your Fast, Private PDF Toolkit</h2>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Fylora is a modern, free online PDF studio designed to help students, creators, and professionals manage their documents effortlessly. We built Fylora because we were tired of online PDF converters that flooded our screens with intrusive ads, forced sign-ups, and questionable privacy policies. We believe that editing, converting, and compressing your sensitive documents should be an ad-free, secure, and lightning-fast experience.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-10">
+            Unlike traditional cloud-based services that demand you wait for uploads to finish, Fylora runs directly in your browser. This means you skip the line. Instantly access the tools you need and get your work done faster than ever before.
+          </p>
+
+          <h3 className="font-display text-2xl font-bold text-foreground mb-4">Comprehensive Features for Every Need</h3>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Our platform is organized to provide a complete suite of document utilities right away:
+          </p>
+          <ul className="list-disc pl-6 mb-10 text-muted-foreground space-y-2">
+            <li><strong>PDF Tools:</strong> Merge multiple reports into a single file, split large ebooks into chapters, compress oversized portfolios for email, and organize pages seamlessly.</li>
+            <li><strong>Text & OCR:</strong> Extract text from scanned documents accurately without buying expensive software. Instantly pull data out of receipts and invoices.</li>
+            <li><strong>Image Utilities:</strong> Convert your PDFs to JPGs or PNG formats, extract embedded images, and compress photos down to shareable sizes.</li>
+            <li><strong>Security:</strong> Add passwords to restrict access, apply watermarks to protect your intellectual property, or remove annoying restrictions from PDFs you already own.</li>
+          </ul>
+
+          <h3 className="font-display text-2xl font-bold text-foreground mb-4">Why Fylora is Different: Security & Privacy First</h3>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            When you use a generic online PDF editor, your highly sensitive documents—such as tax returns, legal contracts, or confidential business proposals—are uploaded to remote servers. This introduces a massive privacy vulnerability. Fylora is built differently. We utilize cutting-edge WebAssembly (Wasm) and client-side processing technologies.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-10">
+            <strong>What does this mean for you?</strong> It means your files never leave your device. The heavy lifting—whether you are merging a 500-page manuscript or applying OCR to a blurry scan—happens utilizing your computer's own processing power. Because we don't upload your data to our servers, we couldn't read your files even if we wanted to. No uploads, no downloads, and absolutely no data retention.
+          </p>
+
+          <h3 className="font-display text-2xl font-bold text-foreground mb-4">Who is Fylora Built For?</h3>
+          <div className="grid sm:grid-cols-3 gap-6 mb-8 mt-6">
+            <div className="p-6 bg-card border border-white/5 rounded-2xl shadow-sm">
+              <h4 className="font-bold text-primary mb-2">Students & Educators</h4>
+              <p className="text-sm text-muted-foreground">Easily combine class notes, compress thick textbook PDFs, and extract assignment text without hitting paywalls.</p>
+            </div>
+            <div className="p-6 bg-card border border-white/5 rounded-2xl shadow-sm">
+              <h4 className="font-bold text-primary mb-2">Professionals</h4>
+              <p className="text-sm text-muted-foreground">Securely password-protect invoices or watermark confidential client proposals on the fly before sending.</p>
+            </div>
+            <div className="p-6 bg-card border border-white/5 rounded-2xl shadow-sm">
+              <h4 className="font-bold text-primary mb-2">Creators</h4>
+              <p className="text-sm text-muted-foreground">Quickly extract high-quality images from moodboard PDFs and convert assets effortlessly for social media.</p>
+            </div>
+          </div>
+
+          <p className="text-muted-foreground leading-relaxed">
+            Stop waiting for file uploads and dealing with subscription popups. Experience the fastest, most private way to manage your documents. Explore Fylora today and get your files organized right away.
+          </p>
         </div>
       </section>
     </Layout>
