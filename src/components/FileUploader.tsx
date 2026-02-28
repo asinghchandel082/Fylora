@@ -146,7 +146,7 @@ const FileUploader = ({
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); onRemoveFile(i); }}
-              className="p-2 mr-1 rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
+              className="h-11 w-11 flex items-center justify-center mr-1 rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
             >
               <X className="h-4 w-4" />
             </button>

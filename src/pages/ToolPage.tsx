@@ -140,7 +140,7 @@ const ToolPage = () => {
                   value={options.password}
                   onChange={e => setOptions({ ...options, password: e.target.value })}
                   placeholder="Enter password…"
-                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow"
+                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 min-h-[44px] text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow"
                 />
               </motion.div>
             )}
@@ -153,7 +153,7 @@ const ToolPage = () => {
                   value={options.watermarkText}
                   onChange={e => setOptions({ ...options, watermarkText: e.target.value })}
                   placeholder="e.g. CONFIDENTIAL"
-                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow"
+                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 min-h-[44px] text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow"
                 />
               </motion.div>
             )}
@@ -164,7 +164,7 @@ const ToolPage = () => {
                 <select
                   value={options.rotationAngle}
                   onChange={e => setOptions({ ...options, rotationAngle: Number(e.target.value) })}
-                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow cursor-pointer"
+                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 min-h-[44px] text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow cursor-pointer"
                 >
                   <option value={90}>90° Clockwise</option>
                   <option value={180}>180°</option>
@@ -179,7 +179,7 @@ const ToolPage = () => {
                 <select
                   value={options.compressLevel}
                   onChange={e => setOptions({ ...options, compressLevel: e.target.value })}
-                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow cursor-pointer"
+                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 min-h-[44px] text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow cursor-pointer"
                 >
                   <option value="low">Low (Fastest, Larger File)</option>
                   <option value="balanced">Balanced (Recommended)</option>
@@ -197,7 +197,7 @@ const ToolPage = () => {
                     value={options.searchText}
                     onChange={e => setOptions({ ...options, searchText: e.target.value })}
                     placeholder="e.g. Important Details"
-                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow"
+                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 min-h-[44px] text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow"
                   />
                 </div>
                 <div>
@@ -205,7 +205,7 @@ const ToolPage = () => {
                   <select
                     value={options.annotationType}
                     onChange={e => setOptions({ ...options, annotationType: e.target.value })}
-                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow cursor-pointer"
+                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 min-h-[44px] text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow cursor-pointer"
                   >
                     <option value="highlight">Yellow Highlight</option>
                     <option value="underline">Red Underline</option>
