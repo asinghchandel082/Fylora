@@ -47,9 +47,17 @@ const Index = () => {
 
             <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 break-words flex flex-col items-center text-center">
               <span>Free Online PDF Tools –</span>
-              <span className="flex flex-col md:flex-row lg:block relative items-center justify-center fylora-gradient-text mt-1 sm:mt-2">
+              {/* Mobile / Tablet view */}
+              <span className="flex flex-col md:flex-row lg:hidden items-center justify-center fylora-gradient-text mt-1 sm:mt-2 w-full">
                 <span>Fast & Ad-Free</span>
-                <span className="md:ml-3 opacity-80 lg:absolute lg:left-full lg:bottom-0 lg:ml-4 lg:whitespace-nowrap">by Fylora</span>
+                <span className="md:ml-3 opacity-90">- Fylora</span>
+              </span>
+
+              {/* Desktop view (Mathematically Centered via Grid) */}
+              <span className="hidden lg:grid grid-cols-[1fr_auto_1fr] w-full items-center fylora-gradient-text mt-1 sm:mt-2">
+                <span className="w-full"></span>
+                <span className="text-center">Fast & Ad-Free</span>
+                <span className="text-left ml-4 opacity-90 whitespace-nowrap">- Fylora</span>
               </span>
             </h1>
 
