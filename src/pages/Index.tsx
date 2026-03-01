@@ -69,7 +69,7 @@ const Index = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-14 px-8 rounded-full font-medium text-lg border-2 hover:bg-muted/50 transition-colors">
-                <Link to="/about">How it works?</Link>
+                <Link to="/about">How it works</Link>
               </Button>
             </motion.div>
           </motion.div>
