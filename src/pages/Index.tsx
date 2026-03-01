@@ -26,7 +26,7 @@ const Index = () => {
 
         <div className="absolute inset-0 bg-[image:var(--fylora-gradient-soft)] opacity-40 dark:opacity-20" />
 
-        <div className="relative container py-20 md:py-28 z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative container py-5 md:py-28 z-10 max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="container py-24 relative z-20">
+      <section className="container py-5 md:py-24 relative z-20">
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {features.map((f, i) => (
             <motion.div
@@ -99,7 +99,7 @@ const Index = () => {
       </section>
 
       {/* Popular Tools */}
-      <section className="container pb-20">
+      <section className="container pb-5 md:pb-20">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl font-bold text-foreground mb-3">Popular Tools</h2>
           <p className="text-muted-foreground">Get started with our most-used PDF tools</p>
@@ -127,7 +127,7 @@ const Index = () => {
       </section>
 
       {/* SEO Content Section */}
-      <section className="container py-24 border-t border-border">
+      <section className="container py-5 md:py-24 border-t border-border">
         <div className="max-w-4xl mx-auto prose prose-slate dark:prose-invert">
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">What is Fylora? Your Fast, Private PDF Toolkit</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
