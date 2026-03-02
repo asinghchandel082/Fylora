@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
   { to: "/tools", label: "All Tools" },
   { to: "/about", label: "About" },
   { to: "/privacy", label: "Privacy" },
@@ -75,7 +74,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {/* CTA & Mobile Toggle (Right) */}
           <div className="flex items-center gap-4 shrink-0">
             <Button asChild className="hidden md:inline-flex rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 shadow-none">
-              <Link to="/tools">Use Tools</Link>
+              <a href="/#services">Our Services</a>
             </Button>
             <button
               className="md:hidden p-2 -mr-2 rounded-md text-muted-foreground hover:bg-muted"
@@ -152,7 +151,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="flex flex-col gap-4">
               <h4 className="font-display font-semibold text-foreground tracking-wide">Product</h4>
               <nav className="flex flex-col gap-3">
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Our Services</Link>
+                <a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Our Services</a>
                 <Link to="/tools" className="text-muted-foreground hover:text-primary transition-colors">All Tools</Link>
                 <Link to="/tool/merge" className="text-muted-foreground hover:text-primary transition-colors">Merge PDF</Link>
                 <Link to="/tool/compress" className="text-muted-foreground hover:text-primary transition-colors">Compress PDF</Link>

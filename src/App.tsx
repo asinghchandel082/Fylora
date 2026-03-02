@@ -9,7 +9,6 @@ import { Loader2 } from "lucide-react";
 
 // Lazy-loaded components
 const Index = React.lazy(() => import("./pages/Index"));
-const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const ToolsPage = React.lazy(() => import("./pages/ToolsPage"));
 const ToolPage = React.lazy(() => import("./pages/ToolPage"));
 const PrivacyPage = React.lazy(() => import("./pages/PrivacyPage"));
@@ -41,7 +40,6 @@ const App = () => (
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/services" element={<ServicesPage />} />
             <Route path="/tools" element={<ToolsPage />} />
             <Route path="/tool/:toolId" element={<ToolPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
