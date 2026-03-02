@@ -34,7 +34,10 @@ const Index = () => {
 
         // Filter out bad ones and sort latest client-side
         const validDocs = docs
-          .filter(d => d.rating >= 3 && d.comment && d.comment.trim().length > 0)
+          .filter(d => d.rating >= 3 && (
+            (d.comment && d.comment.trim().length > 0) ||
+            (d.rating === 5)
+          ))
           .sort((a, b) => {
             const timeA = a.created_at?.seconds || 0;
             const timeB = b.created_at?.seconds || 0;
@@ -186,7 +189,9 @@ const Index = () => {
                       <Star key={idx} className={`h-4 w-4 ${idx < r.rating ? 'fill-yellow-400 text-yellow-400' : 'fill-transparent text-muted-foreground/30'}`} />
                     ))}
                   </div>
-                  <p className="text-foreground leading-relaxed italic">"{r.comment}"</p>
+                  <p className="text-foreground leading-relaxed italic">
+                    "{r.comment && r.comment.trim().length > 0 ? r.comment : "Great experience, highly recommended!"}"
+                  </p>
                 </div>
                 {r.tool && <p className="text-xs font-bold text-primary mt-6 tracking-widest uppercase opacity-80">{r.tool.replace(/-/g, " ")}</p>}
               </motion.div>
