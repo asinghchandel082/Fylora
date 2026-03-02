@@ -191,8 +191,20 @@ const Index = () => {
               <motion.div
                 className="flex gap-4 sm:gap-6"
                 initial={false}
-                animate={{ x: `calc(-${reviewIndex * 100}% - ${reviewIndex * (window.innerWidth < 640 ? 1 : 1.5)}rem)` }}
+                animate={{ x: `calc(-${reviewIndex * 100}% - ${reviewIndex * (typeof window !== 'undefined' && window.innerWidth < 640 ? 1 : 1.5)}rem)` }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(e, { offset }) => {
+                  const isMobile = window.innerWidth < 640;
+                  const maxIdx = Math.max(0, reviews.length - (isMobile ? 1 : 3));
+                  if (offset.x < -50 && reviewIndex < maxIdx) {
+                    setReviewIndex(prev => prev + 1);
+                  } else if (offset.x > 50 && reviewIndex > 0) {
+                    setReviewIndex(prev => prev - 1);
+                  }
+                }}
               >
                 {reviews.map((r, i) => (
                   <div key={i} className="w-full sm:w-[calc(33.333%-1rem)] flex-shrink-0">
@@ -233,7 +245,7 @@ const Index = () => {
 
             {/* Mobile Swipe Indicators */}
             <div className="flex sm:hidden justify-center gap-2 mt-6">
-              {Array.from({ length: Math.max(1, reviews.length - 2) }).map((_, i) => (
+              {Array.from({ length: reviews.length }).map((_, i) => (
                 <div
                   key={i}
                   className={`h-2 rounded-full transition-all ${i === reviewIndex ? 'w-6 bg-primary' : 'w-2 bg-muted'}`}
