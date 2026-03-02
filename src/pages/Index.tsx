@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
+import { ArrowRight, Shield, Zap, Lock, Star } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { collection, query, where, orderBy, limit, getDocs } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import { tools } from "@/lib/tools";
 import Layout from "@/components/Layout";
 import React, { Suspense } from "react";
@@ -15,6 +18,32 @@ const features = [
 
 const Index = () => {
   const featuredTools = tools.slice(0, 8);
+
+  const { data: reviews = [] } = useQuery({
+    queryKey: ['homepage-reviews'],
+    queryFn: async () => {
+      if (!db) return [];
+      try {
+        const q = query(
+          collection(db, "reviews"),
+          where("approved", "==", true),
+          where("rating", ">=", 3),
+          orderBy("created_at", "desc"),
+          limit(6)
+        );
+        const snapshot = await getDocs(q);
+        const docs = snapshot.docs.map(doc => doc.data() as { rating: number; comment?: string; tool?: string });
+        // Return randomized top 3-6 reviews gracefully
+        return docs.filter(d => d.comment && d.comment.trim().length > 0).sort(() => 0.5 - Math.random());
+      } catch (e) {
+        console.error("Reviews fetch failed", e);
+        return [];
+      }
+    },
+    staleTime: 1000 * 60 * 60, // 1 hour static cache
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
 
   return (
     <Layout>
@@ -125,6 +154,38 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      {/* User Reviews */}
+      {reviews.length > 0 && (
+        <section className="container pb-5 md:pb-24">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-3xl font-bold text-foreground mb-3">Loved by Users</h2>
+            <p className="text-muted-foreground">Hear what our community says about Fylora.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {reviews.map((r, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-6 rounded-3xl bg-card border border-white/5 shadow-sm text-left flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                      <Star key={idx} className={`h-4 w-4 ${idx < r.rating ? 'fill-yellow-400 text-yellow-400' : 'fill-transparent text-muted-foreground/30'}`} />
+                    ))}
+                  </div>
+                  <p className="text-foreground leading-relaxed italic">"{r.comment}"</p>
+                </div>
+                {r.tool && <p className="text-xs font-bold text-primary mt-6 tracking-widest uppercase opacity-80">{r.tool.replace(/-/g, " ")}</p>}
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* SEO Content Section */}
       <section className="container py-5 md:py-24 border-t border-border">

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { getToolById } from "@/lib/tools";
 import { processPdf } from "@/lib/pdf-processor";
 import { trackToolUsed } from "@/utils/analytics";
+import ReviewModal from "@/components/ReviewModal";
 
 type Status = "idle" | "processing" | "done" | "error";
 
@@ -20,6 +21,7 @@ const ToolPage = () => {
   const [status, setStatus] = useState<Status>("idle");
   const [result, setResult] = useState<Blob | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
+  const [showReviewModal, setShowReviewModal] = useState(false);
   const [options, setOptions] = useState({
     password: "",
     watermarkText: "",
@@ -100,6 +102,11 @@ const ToolPage = () => {
     a.download = `fylora-${toolId}-result.${extension}`;
     a.click();
     URL.revokeObjectURL(url);
+
+    // Trigger review modal if not asked this session
+    if (!sessionStorage.getItem("fylora_review_done")) {
+      setTimeout(() => setShowReviewModal(true), 1500);
+    }
   }, [result, toolId]);
 
   if (!tool) {
@@ -315,6 +322,15 @@ const ToolPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ReviewModal
+        isOpen={showReviewModal}
+        onClose={() => {
+          setShowReviewModal(false);
+          sessionStorage.setItem("fylora_review_done", "true");
+        }}
+        toolName={tool.name}
+      />
     </Layout>
   );
 };
