@@ -193,7 +193,71 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           </div>
 
-          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* OUR JOURNEY STORYTELLING SECTION */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mt-20 pt-24 pb-16 border-t border-border/60 flex flex-col items-center"
+          >
+            <div className="max-w-[800px] w-full mx-auto px-4 md:px-0">
+              <div className="mb-14 text-center sm:text-left sm:ml-48">
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">Our Journey</h3>
+                <p className="text-muted-foreground text-lg">"Built because using PDF tools became unnecessarily painful."</p>
+              </div>
+
+              <div className="space-y-12 relative pl-6 sm:pl-0 sm:ml-48">
+                {/* Vertical Line */}
+                <div className="absolute left-[11px] sm:-left-0 top-2 bottom-2 w-[1px] bg-border"></div>
+
+                <div className="relative">
+                  <div className="absolute -left-[17px] sm:-left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-card"></div>
+                  <span className="block mb-2 sm:absolute sm:-left-[12.5rem] sm:top-0.5 text-sm font-semibold text-muted-foreground w-44 sm:text-right">2026 &mdash; Fylora launched</span>
+                  <p className="text-foreground/90 font-medium leading-relaxed">
+                    <strong className="font-semibold text-foreground block mb-1">The Beginning</strong>
+                    Fylora started with one simple frustration &mdash; online PDF tools were slow, filled with ads, confusing, and sometimes unsafe.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute -left-[17px] sm:-left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-border ring-4 ring-card"></div>
+                  <p className="text-foreground/90 font-medium leading-relaxed">
+                    <strong className="font-semibold text-foreground block mb-1">The Shift</strong>
+                    Instead of adding more complexity, we decided to remove it.<br />No clutter. No forced signups. No chaos.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute -left-[17px] sm:-left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-border ring-4 ring-card"></div>
+                  <p className="text-foreground/90 font-medium leading-relaxed">
+                    <strong className="font-semibold text-foreground block mb-1">The Build</strong>
+                    Built fully using AI-assisted development and modern web technologies, Fylora focuses on speed, privacy, and simplicity.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute -left-[17px] sm:-left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-card"></div>
+                  <span className="block mb-2 sm:absolute sm:-left-[12.5rem] sm:top-0.5 text-sm font-semibold text-muted-foreground w-44 sm:text-right">2026 &mdash; Added software services</span>
+                  <p className="text-foreground/90 font-medium leading-relaxed">
+                    <strong className="font-semibold text-foreground block mb-1">Today</strong>
+                    Today, Fylora offers powerful PDF tools and is expanding into software services &mdash; helping businesses build digital products the right way.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute -left-[17px] sm:-left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-card"></div>
+                  <span className="block mb-2 sm:absolute sm:-left-[12.5rem] sm:top-0.5 text-sm font-semibold text-muted-foreground w-44 sm:text-right">Future &mdash; Expanding digital tools</span>
+                  <p className="text-foreground/90 font-medium leading-relaxed">
+                    <strong className="font-semibold text-foreground block mb-1">Vision</strong>
+                    We're building tools that just work.<br />Clean. Fast. Private.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-sm text-muted-foreground md:flex-1">
               &copy; 2026 Fylora. Built with care for privacy and performance.
             </p>
