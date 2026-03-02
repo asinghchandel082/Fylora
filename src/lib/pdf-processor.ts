@@ -20,7 +20,7 @@ export async function processPdf(
   const readFile = (file: File) => file.arrayBuffer();
 
   switch (toolId) {
-    case "merge": {
+    case "merge-pdf": {
       const merged = await PDFDocument.create();
       for (const file of files) {
         const bytes = await readFile(file);
@@ -31,7 +31,7 @@ export async function processPdf(
       return toBlob(await merged.save());
     }
 
-    case "split": {
+    case "split-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
       const zip = new JSZip();
@@ -46,7 +46,7 @@ export async function processPdf(
       return await zip.generateAsync({ type: "blob" });
     }
 
-    case "rotate": {
+    case "rotate-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
       const angle = options.rotationAngle || 90;
@@ -54,7 +54,7 @@ export async function processPdf(
       return toBlob(await doc.save());
     }
 
-    case "compress": {
+    case "compress-pdf": {
       const bytes = await readFile(files[0]);
       try {
         const level = options.compressLevel || "balanced";
@@ -116,7 +116,7 @@ export async function processPdf(
       }
     }
 
-    case "watermark": {
+    case "watermark-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
       const font = await doc.embedFont(StandardFonts.HelveticaBold);
@@ -137,7 +137,7 @@ export async function processPdf(
       return toBlob(await doc.save());
     }
 
-    case "reorder": {
+    case "reorder-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
       const newDoc = await PDFDocument.create();
@@ -147,7 +147,7 @@ export async function processPdf(
       return toBlob(await newDoc.save());
     }
 
-    case "protect": {
+    case "protect-pdf": {
       const bytes = new Uint8Array(await readFile(files[0]));
       if (!options.password) throw new Error("Password is required to protect the PDF.");
       // Real RC4 128-bit encryption client-side
@@ -155,7 +155,7 @@ export async function processPdf(
       return toBlob(encrypted);
     }
 
-    case "unlock": {
+    case "unlock-pdf": {
       const bytes = await readFile(files[0]);
 
       if (!options.password) {
@@ -187,12 +187,12 @@ export async function processPdf(
           const doc = await PDFDocument.load(bytes);
           return toBlob(await doc.save());
         } catch {
-          throw new Error(`Could not unlock this PDF. Reason: ${err?.message || "Corrupted Structure"}`);
+          throw new Error(`Could not unlock this PDF. Reason: ${(err as Error)?.message || "Corrupted Structure"}`);
         }
       }
     }
 
-    case "pdf-to-txt": {
+    case "pdf-to-word": {
       const bytes = await readFile(files[0]);
       const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
       let text = "";
@@ -218,7 +218,7 @@ export async function processPdf(
       return new Blob([md], { type: "text/markdown" });
     }
 
-    case "image-to-pdf": {
+    case "jpg-to-pdf": {
       const newDoc = await PDFDocument.create();
       for (const file of files) {
         const bytes = await readFile(file);
@@ -231,7 +231,7 @@ export async function processPdf(
       return toBlob(await newDoc.save());
     }
 
-    case "pdf-to-image": {
+    case "pdf-to-jpg": {
       const bytes = await readFile(files[0]);
       const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
       const zip = new JSZip();
@@ -258,7 +258,7 @@ export async function processPdf(
       return await zip.generateAsync({ type: "blob" });
     }
 
-    case "ocr": {
+    case "ocr-pdf": {
       const bytes = await readFile(files[0]);
       const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
 
@@ -283,7 +283,7 @@ export async function processPdf(
       return new Blob([result.data.text], { type: "text/plain" });
     }
 
-    case "annotate": {
+    case "annotate-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
       const pages = doc.getPages();
@@ -361,7 +361,7 @@ export async function processPdf(
       return toBlob(await doc.save());
     }
 
-    case "redact": {
+    case "redact-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
       const pages = doc.getPages();

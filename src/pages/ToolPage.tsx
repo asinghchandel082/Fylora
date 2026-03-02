@@ -39,12 +39,12 @@ const ToolPage = () => {
     url: `/${toolId}`,
   });
 
-  const needsMultiple = toolId === "merge" || toolId === "image-to-pdf";
-  const needsPassword = toolId === "protect" || toolId === "unlock";
-  const needsWatermark = toolId === "watermark";
-  const needsRotate = toolId === "rotate";
-  const needsAnnotate = toolId === "annotate";
-  const needsCompress = toolId === "compress";
+  const needsMultiple = toolId === "merge-pdf" || toolId === "jpg-to-pdf";
+  const needsPassword = toolId === "protect-pdf" || toolId === "unlock-pdf";
+  const needsWatermark = toolId === "watermark-pdf";
+  const needsRotate = toolId === "rotate-pdf";
+  const needsAnnotate = toolId === "annotate-pdf";
+  const needsCompress = toolId === "compress-pdf";
 
   const handleFilesSelected = useCallback((newFiles: File[]) => {
     setFiles(prev => needsMultiple ? [...prev, ...newFiles] : newFiles);
@@ -77,7 +77,7 @@ const ToolPage = () => {
       const inputType = files[0]?.name.split('.').pop() || "unknown";
 
       let outputType = "pdf"; // Default assumption
-      if (blob.type === "application/zip" || toolId === "split" || toolId === "pdf-to-image") {
+      if (blob.type === "application/zip" || toolId === "split-pdf" || toolId === "pdf-to-jpg") {
         outputType = "zip";
       } else if (blob.type === "text/plain") {
         outputType = "txt";
@@ -99,7 +99,7 @@ const ToolPage = () => {
     a.href = url;
 
     let extension = "pdf";
-    if (result.type === "application/zip" || toolId === "split" || toolId === "pdf-to-image") {
+    if (result.type === "application/zip" || toolId === "split-pdf" || toolId === "pdf-to-jpg") {
       extension = "zip";
     } else if (result.type === "text/plain") {
       extension = "txt";
@@ -153,7 +153,7 @@ const ToolPage = () => {
           <PrivacyBadge className="mb-10 inline-flex" />
 
           <FileUploader
-            accept={toolId === "image-to-pdf" ? ".png,.jpg,.jpeg" : ".pdf"}
+            accept={toolId === "jpg-to-pdf" ? ".png,.jpg,.jpeg" : ".pdf"}
             multiple={needsMultiple}
             onFilesSelected={handleFilesSelected}
             files={files}
@@ -164,7 +164,7 @@ const ToolPage = () => {
             {needsPassword && files.length > 0 && (
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="p-6 rounded-2xl bg-card border border-white/5 shadow-sm">
                 <label className="text-sm font-semibold text-foreground mb-2 block">
-                  {toolId === "protect" ? "Set Password" : "Enter Password"}
+                  {toolId === "protect-pdf" ? "Set Password" : "Enter Password"}
                 </label>
                 <input
                   type="password"
