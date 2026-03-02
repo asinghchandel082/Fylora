@@ -145,7 +145,8 @@ const ToolPage = () => {
             </div>
             <div>
               <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">{tool.name}</h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">{tool.description}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-1">{tool.seoDefinition}</p>
+              <p className="text-base text-muted-foreground/80 leading-relaxed">{tool.description}</p>
             </div>
           </div>
 
@@ -301,14 +302,75 @@ const ToolPage = () => {
             <h2 className="font-display text-2xl font-bold text-foreground mb-4">About the {tool.name} Tool</h2>
             <p className="leading-relaxed text-base">{tool.seoContent}</p>
 
-            <h3 className="font-display text-xl font-bold text-foreground mt-8 mb-4">Related PDF Tools</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-0 list-none text-sm">
-              <li><Link to="/merge-pdf" className="text-primary hover:underline font-medium">Merge PDF</Link></li>
-              <li><Link to="/compress-pdf" className="text-primary hover:underline font-medium">Compress PDF</Link></li>
-              <li><Link to="/split-pdf" className="text-primary hover:underline font-medium">Split PDF</Link></li>
-              <li><Link to="/pdf-to-word" className="text-primary hover:underline font-medium">PDF to Word</Link></li>
+            {/* Quick Answer Block for Voice Search */}
+            <div className="my-10 p-6 rounded-2xl bg-primary/5 border border-primary/10">
+              <h2 className="font-display text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-primary" /> Quick Answer
+              </h2>
+              <p className="leading-relaxed text-base font-medium text-foreground/90">{tool.seoQuickAnswer}</p>
+            </div>
+
+            {/* FAQs for Featured Snippets */}
+            <h2 className="font-display text-2xl font-bold text-foreground mt-12 mb-6 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              {tool.seoFaqs.map((faq, index) => (
+                <div key={index} className="p-6 rounded-2xl bg-card border border-white/5 shadow-sm">
+                  <h3 className="font-display text-lg font-bold text-foreground mb-3">{faq.question}</h3>
+                  <p className="leading-relaxed text-base text-muted-foreground">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Why Choose Comparison */}
+            <div className="my-12 p-8 rounded-3xl bg-secondary/30 border border-white/5">
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6 text-center">Why choose Fylora over other PDF tools?</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0">
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /><span><strong>No forced sign-up:</strong> Start processing instantly.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /><span><strong>Faster processing:</strong> Harnessing local WebAssembly speeds.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /><span><strong>100% private:</strong> Your files never upload to our servers.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /><span><strong>Minimal interface:</strong> Zero annoying pop-up limits or chaotic ads.</span></li>
+              </ul>
+            </div>
+
+            <h3 className="font-display text-xl font-bold text-foreground mt-12 mb-4 text-center">Related PDF Tools</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 p-0 list-none text-center">
+              <li><Link to="/merge-pdf" className="block p-4 rounded-xl bg-card border border-white/5 hover:border-primary/50 hover:bg-primary/5 transition-colors font-medium">Merge PDF</Link></li>
+              <li><Link to="/compress-pdf" className="block p-4 rounded-xl bg-card border border-white/5 hover:border-primary/50 hover:bg-primary/5 transition-colors font-medium">Compress PDF</Link></li>
+              <li><Link to="/split-pdf" className="block p-4 rounded-xl bg-card border border-white/5 hover:border-primary/50 hover:bg-primary/5 transition-colors font-medium">Split PDF</Link></li>
+              <li><Link to="/pdf-to-word" className="block p-4 rounded-xl bg-card border border-white/5 hover:border-primary/50 hover:bg-primary/5 transition-colors font-medium">PDF to Word</Link></li>
             </ul>
           </article>
+
+          {/* Dynamic Linked Data specific to the Tool Data (FAQ & HowTo structures) */}
+          <script type="application/ld+json" dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "FAQPage",
+                  "mainEntity": tool.seoFaqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": faq.answer
+                    }
+                  }))
+                },
+                {
+                  "@type": "HowTo",
+                  "name": `How to use the ${tool.name} tool securely`,
+                  "description": tool.seoDefinition,
+                  "step": tool.seoSteps.map((step, i) => ({
+                    "@type": "HowToStep",
+                    "name": step.name,
+                    "text": step.description,
+                    "url": `https://fylora.online/${tool.id}#step-${i + 1}`
+                  }))
+                }
+              ]
+            })
+          }} />
 
         </motion.div>
       </div>
