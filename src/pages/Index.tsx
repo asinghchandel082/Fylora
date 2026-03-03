@@ -18,7 +18,8 @@ const features = [
 ];
 
 const Index = () => {
-  const featuredTools = tools.slice(0, 8);
+  const featuredToolIds = ["merge-pdf", "split-pdf", "compress-pdf", "word-to-pdf", "pdf-to-word-alias", "jpg-to-pdf-alias", "protect-pdf", "repair-pdf"];
+  const featuredTools = featuredToolIds.map(id => tools.find(t => t.id === id)).filter(Boolean);
   const [reviewIndex, setReviewIndex] = useState(0);
 
   useSeo({

@@ -5,8 +5,10 @@ import ToolCard from "@/components/ToolCard";
 
 const categories = [
   { key: "core", label: "Core Tools" },
-  { key: "convert", label: "Conversion" },
-  { key: "advanced", label: "Advanced" },
+  { key: "convert-to", label: "Convert to PDF" },
+  { key: "convert-from", label: "Convert from PDF" },
+  { key: "edit-optimize", label: "Edit & Optimize" },
+  { key: "security", label: "Security" },
 ] as const;
 
 const ToolsPage = () => (
