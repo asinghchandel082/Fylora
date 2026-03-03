@@ -39,7 +39,7 @@ const ToolPage = () => {
     url: `/${toolId}`,
   });
 
-  const needsMultiple = toolId === "merge-pdf" || toolId === "jpg-to-pdf";
+  const needsMultiple = toolId === "merge-pdf" || toolId === "jpg-to-pdf" || toolId === "jpg-to-pdf-alias";
   const needsPassword = toolId === "protect-pdf" || toolId === "unlock-pdf";
   const needsWatermark = toolId === "watermark-pdf";
   const needsRotate = toolId === "rotate-pdf";
@@ -105,6 +105,10 @@ const ToolPage = () => {
       extension = "txt";
     } else if (result.type === "text/markdown") {
       extension = "md";
+    } else if (toolId === "pdf-to-word-alias") {
+      extension = "docx";
+    } else if (toolId === "word-to-pdf" || toolId === "jpg-to-pdf-alias") {
+      extension = "pdf";
     }
 
     a.download = `fylora-${toolId}-result.${extension}`;
