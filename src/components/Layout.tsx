@@ -1,9 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { tools } from "@/lib/tools";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -51,6 +52,62 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map(link => {
               const isActive = location.pathname === link.to;
+              const isTools = link.to === "/tools";
+
+              if (isTools) {
+                return (
+                  <div key={link.to} className="relative group/nav">
+                    <Link
+                      to={link.to}
+                      className={`relative py-1 flex items-center gap-1 text-sm font-medium transition-colors ${isActive ? "text-foreground" : "text-muted-foreground group-hover/nav:text-foreground"}`}
+                    >
+                      {link.label}
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/nav:-rotate-180" />
+                      {isActive && (
+                        <motion.div
+                          layoutId="header-active-link"
+                          className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded-full"
+                          transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                        />
+                      )}
+                    </Link>
+
+                    {/* Hover Mega Menu */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 w-[600px] z-50 pointer-events-none group-hover/nav:pointer-events-auto">
+                      <div className="bg-card/95 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl p-6 grid grid-cols-2 gap-x-8 gap-y-6">
+                        {["core", "convert", "advanced"].map(category => (
+                          <div key={category} className={category === "advanced" ? "col-span-2" : ""}>
+                            <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                              {category === "core" ? "Essential Tools" : category === "convert" ? "Convert PDF" : "Advanced & Security"}
+                            </h3>
+                            <div className={`grid ${category === "advanced" ? "grid-cols-2" : "grid-cols-1"} gap-2`}>
+                              {tools.filter(t => t.category === category).map(tool => {
+                                const Icon = tool.icon;
+                                return (
+                                  <Link
+                                    key={tool.id}
+                                    to={`/${tool.id}`}
+                                    className="flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-primary/10 transition-colors group/item"
+                                  >
+                                    <div className="mt-0.5 p-1.5 rounded-md bg-background/50 text-muted-foreground group-hover/item:text-primary transition-colors border border-white/5">
+                                      <Icon className="h-4 w-4" />
+                                    </div>
+                                    <div>
+                                      <div className="text-sm font-medium text-foreground group-hover/item:text-primary transition-colors leading-none tracking-tight mb-1">{tool.name}</div>
+                                      <div className="text-xs text-muted-foreground line-clamp-1">{tool.description}</div>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={link.to}
@@ -94,20 +151,66 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               exit={{ height: 0, opacity: 0 }}
               className="md:hidden border-t border-border overflow-hidden"
             >
-              <nav className="container py-4 flex flex-col gap-1">
-                {navLinks.map(link => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setMobileOpen(false)}
-                    className={`px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${location.pathname === link.to
-                      ? "text-primary bg-accent"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                      }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <nav className="container py-4 flex flex-col gap-1 overflow-y-auto max-h-[70vh]">
+                {navLinks.map(link => {
+                  const isTools = link.to === "/tools";
+                  const isActive = location.pathname === link.to;
+
+                  if (isTools) {
+                    return (
+                      <div key={link.to} className="flex flex-col">
+                        <div className="flex items-center justify-between px-4 py-2.5 rounded-md text-sm font-medium transition-colors text-muted-foreground hover:text-foreground hover:bg-muted relative">
+                          <Link
+                            to={link.to}
+                            onClick={() => setMobileOpen(false)}
+                            className="absolute inset-0"
+                          ></Link>
+                          <span>{link.label}</span>
+                          <ChevronDown className="h-4 w-4 pointer-events-none" />
+                        </div>
+
+                        {/* Mobile tools list inside accordion */}
+                        <div className="pl-6 pr-4 py-3 pb-4 flex flex-col gap-5 border-l-2 border-border ml-5 mt-1 bg-muted/20 rounded-lg">
+                          {["core", "convert", "advanced"].map(category => (
+                            <div key={category} className="flex flex-col gap-2">
+                              <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                                {category === "core" ? "Essential Tools" : category === "convert" ? "Convert PDF" : "Advanced & Security"}
+                              </h3>
+                              {tools.filter(t => t.category === category).map(tool => {
+                                const Icon = tool.icon;
+                                return (
+                                  <Link
+                                    key={tool.id}
+                                    to={`/${tool.id}`}
+                                    onClick={() => setMobileOpen(false)}
+                                    className={`flex items-center gap-3 py-1.5 transition-colors ${location.pathname === `/${tool.id}` ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"}`}
+                                  >
+                                    <Icon className="h-4 w-4 shrink-0" />
+                                    <span className="text-sm line-clamp-1">{tool.name}</span>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setMobileOpen(false)}
+                      className={`px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${isActive
+                        ? "text-primary bg-accent"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        }`}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
 
                 <div className="pt-3 mt-1 mb-1 border-t border-border">
                   <Button asChild className="w-full justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
