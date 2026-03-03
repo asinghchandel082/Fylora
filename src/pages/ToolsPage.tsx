@@ -11,7 +11,7 @@ const categories = [
 
 const ToolsPage = () => (
   <Layout>
-    <div className="container py-12 md:py-20">
+    <div className="container py-16 md:py-24">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}

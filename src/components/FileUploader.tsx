@@ -98,9 +98,10 @@ const FileUploader = ({
         animate={{
           borderColor: isDragging ? "var(--primary)" : "var(--border)",
           backgroundColor: isDragging ? "hsl(var(--primary) / 0.05)" : "hsl(var(--muted) / 0.3)",
+          boxShadow: isDragging ? "0 0 40px rgba(var(--primary-rgb), 0.15), inset 0 0 20px rgba(var(--primary-rgb), 0.05)" : "none"
         }}
-        transition={{ duration: 0.2 }}
-        className="relative cursor-pointer rounded-3xl border-2 border-dashed p-12 text-center overflow-hidden group"
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="relative cursor-pointer rounded-3xl border-2 border-dashed p-12 text-center overflow-hidden group transition-colors"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
