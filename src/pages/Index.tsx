@@ -62,7 +62,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-10 md:pt-32 md:pb-16 flex items-center justify-center">
+      <section className="relative overflow-hidden pt-12 pb-10 md:pt-20 md:pb-16 flex items-center justify-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none animate-[pulse_8s_ease-in-out_infinite]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none animate-[pulse_10s_ease-in-out_infinite_reverse]" />
         <div className="absolute inset-0 bg-[image:var(--fylora-gradient-soft)] opacity-40 dark:opacity-20" />
@@ -77,20 +77,20 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background border border-border shadow-sm text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background border border-border shadow-sm text-sm font-medium mb-6"
             >
               <Shield className="h-4 w-4 text-primary" />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-500">
                 100% Private & Client-Side
               </span>
             </motion.div>
-            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-balance flex flex-col items-center text-center">
+            <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-balance flex flex-col items-center text-center">
               <span>Free Online PDF Tools</span>
               <span className="block w-full text-center fylora-gradient-text mt-1 sm:mt-2">
                 Fast & Ad-Free
               </span>
             </h1>
-            <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed font-light">
               Merge, split, compress, convert, and protect. The fastest PDF studio that never uploads your files to a server.
             </p>
             <motion.div
@@ -114,7 +114,7 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="container pt-10 pb-16 md:pt-16 md:pb-20 relative z-20">
+      <section className="container pt-8 pb-12 md:pt-12 md:pb-16 relative z-20">
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {features.map((f, i) => (
             <motion.div
@@ -136,7 +136,7 @@ const Index = () => {
       </section>
 
       {/* Popular Tools */}
-      <section className="py-16 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-y border-border/40">
+      <section className="py-12 md:py-16 bg-slate-50/50 dark:bg-slate-900/20 border-y border-border/40">
         <div className="container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-display text-3xl font-bold text-foreground mb-4">Popular Tools</h2>
@@ -167,7 +167,7 @@ const Index = () => {
 
       {/* User Reviews */}
       {reviews.length > 0 && (
-        <section className="py-16 md:py-20 bg-background">
+        <section className="py-12 md:py-16 bg-background">
           <div className="container">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">Loved by Users</h2>
@@ -250,7 +250,7 @@ const Index = () => {
       )}
 
       {/* SEO Content Section */}
-      <section className="py-16 md:py-20 bg-muted/20 border-t border-border/50">
+      <section className="py-12 md:py-16 bg-muted/20 border-t border-border/50">
         <div className="container">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 prose prose-slate dark:prose-invert">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">What is Fylora? Your Fast, Private PDF Toolkit</h2>
