@@ -2,132 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fylora.online/</loc>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fylora.online/tools</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fylora.online/about</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fylora.online/faq</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fylora.online/roadmap</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fylora.online/careers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fylora.online/press</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fylora.online/security</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fylora.online/privacy</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fylora.online/terms</loc>
-    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/faq</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/security</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/journey</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/press</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fylora.online/request-feature</loc>
-    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fylora.online/merge-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/split-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/compress-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/pdf-to-jpg</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/jpg-to-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/rotate-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/reorder-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/watermark-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/protect-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/unlock-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/pdf-to-word</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/pdf-to-md</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/ocr-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/annotate-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fylora.online/redact-pdf</loc>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/word-to-pdf</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/pdf-to-word-alias</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/jpg-to-pdf-alias</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/repair-pdf</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/compress-pdf-without-losing-quality</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/merge-pdf-files-online-free</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/convert-pdf-to-word-without-formatting-loss</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/is-it-safe-to-use-online-pdf-tools</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/reduce-pdf-size-for-email</loc>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -22,6 +22,8 @@ const PressPage = React.lazy(() => import("./pages/PressPage"));
 const FaqPage = React.lazy(() => import("./pages/FaqPage"));
 const FeatureRequestPage = React.lazy(() => import("./pages/FeatureRequestPage"));
 const JourneyPage = React.lazy(() => import("./pages/JourneyPage"));
+const BlogIndexPage = React.lazy(() => import("./pages/BlogIndexPage"));
+const BlogPostPage = React.lazy(() => import("./pages/BlogPostPage"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -54,6 +56,8 @@ const App = () => (
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/request-feature" element={<FeatureRequestPage />} />
             <Route path="/journey" element={<JourneyPage />} />
+            <Route path="/blog" element={<BlogIndexPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/:toolId" element={<ToolPage />} /> {/* Fallback dynamically captures tool slugs */}
             <Route path="*" element={<NotFound />} />
           </Routes>
