@@ -6,7 +6,7 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
   return (
     <Link
       to={`/${tool.id}`}
-      className="group relative flex flex-col p-6 rounded-[24px] bg-card border border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-200 ease-out overflow-hidden"
+      className="group relative flex flex-col p-5 rounded-2xl bg-card border border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-200 ease-out overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
 

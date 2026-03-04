@@ -245,7 +245,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </main>
 
       <footer className="border-t border-white/10 bg-card">
-        <div className="container py-16 md:py-20 lg:py-24">
+        <div className="container py-12 md:py-16 lg:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
 
             {/* BRANDING */}
@@ -307,7 +307,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           </div>
 
-          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-sm text-muted-foreground md:flex-1">
               &copy; 2026 Fylora. Built with care for privacy and performance.
             </p>

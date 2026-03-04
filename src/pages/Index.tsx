@@ -62,7 +62,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16 pb-20 md:pt-32 md:pb-32 flex items-center justify-center">
+      <section className="relative overflow-hidden pt-12 pb-16 md:pt-24 md:pb-24 flex items-center justify-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none animate-[pulse_8s_ease-in-out_infinite]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none animate-[pulse_10s_ease-in-out_infinite_reverse]" />
         <div className="absolute inset-0 bg-[image:var(--fylora-gradient-soft)] opacity-40 dark:opacity-20" />
@@ -114,7 +114,7 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="container py-16 md:py-28 relative z-20">
+      <section className="container py-12 md:py-20 relative z-20">
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {features.map((f, i) => (
             <motion.div
@@ -123,7 +123,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
-              className="text-left p-8 rounded-3xl bg-card border border-white/5 shadow-xl hover:shadow-2xl transition-shadow duration-300 group"
+              className="text-left p-6 rounded-2xl bg-card border border-white/5 shadow-xl hover:shadow-2xl transition-shadow duration-300 group"
             >
               <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 <f.icon className="h-7 w-7" />
@@ -136,7 +136,7 @@ const Index = () => {
       </section>
 
       {/* Popular Tools */}
-      <section className="py-20 md:py-32 bg-slate-50/50 dark:bg-slate-900/20 border-y border-border/40">
+      <section className="py-16 md:py-24 bg-slate-50/50 dark:bg-slate-900/20 border-y border-border/40">
         <div className="container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-display text-3xl font-bold text-foreground mb-4">Popular Tools</h2>
@@ -167,7 +167,7 @@ const Index = () => {
 
       {/* User Reviews */}
       {reviews.length > 0 && (
-        <section className="py-20 md:py-32 bg-background">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">Loved by Users</h2>
@@ -209,7 +209,7 @@ const Index = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="p-6 rounded-3xl bg-card border border-white/5 shadow-sm text-left flex flex-col justify-between h-full"
+                        className="p-5 rounded-2xl bg-card border border-white/5 shadow-sm text-left flex flex-col justify-between h-full"
                       >
                         <div>
                           <div className="flex gap-1 mb-4">
@@ -250,7 +250,7 @@ const Index = () => {
       )}
 
       {/* SEO Content Section */}
-      <section className="py-20 md:py-32 bg-muted/20 border-t border-border/50">
+      <section className="py-16 md:py-24 bg-muted/20 border-t border-border/50">
         <div className="container">
           <div className="max-w-4xl mx-auto prose prose-slate dark:prose-invert">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">What is Fylora? Your Fast, Private PDF Toolkit</h2>
