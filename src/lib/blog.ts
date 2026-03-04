@@ -31,22 +31,22 @@ export const blogPosts: BlogPost[] = [
         content: {
             intro: [
                 "Large PDF files can be frustrating. They won’t upload, email, or share easily.",
-                "The good news? You can compress a PDF without losing quality — and without risking your privacy.",
+                "The good news? You can <strong>compress a PDF without losing quality</strong> — and without risking your privacy.",
                 "This guide explains exactly how."
             ],
             sections: [
                 {
                     heading: "Why PDF Files Become Too Large",
                     paragraphs: [
-                        "PDF size increases due to high-resolution images, scanned documents, embedded fonts, unnecessary metadata, and unoptimized exports.",
+                        "PDF size increases due to <strong>high-resolution images</strong>, scanned documents, <strong>embedded fonts</strong>, unnecessary metadata, and unoptimized exports.",
                         "Understanding this helps you reduce file size without damaging readability."
                     ]
                 },
                 {
                     heading: "Best Way to Compress a PDF (Without Losing Quality)",
                     paragraphs: [
-                        "The safest method is client-side compression.",
-                        "Client-side processing means your file stays on your device, nothing is uploaded to a server, no account is required, and no data is stored.",
+                        "The safest method is <strong>client-side compression</strong>.",
+                        "Client-side processing means your file <strong>stays on your device</strong>, nothing is uploaded to a server, no account is required, and no data is stored.",
                         "Tools like Fylora compress PDFs instantly inside your browser."
                     ]
                 },
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
         content: {
             intro: [
                 "Need to combine multiple PDF files into one?",
-                "Whether for work, school, or business — merging PDFs should take seconds, not minutes.",
+                "Whether for work, school, or business — <strong>merging PDFs should take seconds</strong>, not minutes.",
                 "Here’s how to do it safely and instantly."
             ],
             sections: [
@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
                 {
                     heading: "Best Way to Merge PDFs",
                     paragraphs: [
-                        "Use a browser-based PDF merge tool that works instantly, requires no login, doesn’t store files, and has no watermark.",
+                        "Use a browser-based PDF merge tool that <strong>works instantly</strong>, requires <strong>no login</strong>, doesn’t store files, and has no watermark.",
                         "Tools like Fylora merge PDFs securely on your own device rather than relying on external web clouds."
                     ]
                 },
@@ -172,9 +172,9 @@ export const blogPosts: BlogPost[] = [
                 {
                     heading: "Why Formatting Breaks",
                     paragraphs: [
-                        "Formatting issues happen because PDFs are essentially fixed layout images or strict document streams.",
+                        "Formatting issues happen because PDFs are essentially <strong>fixed layout images</strong> or strict document streams.",
                         "When fonts are embedded and complex tables confuse basic converters, layout anomalies appear.",
-                        "Smart conversion tools parse these graphical elements directly into real XML document maps, fixing this disconnect."
+                        "<strong>Smart conversion tools</strong> parse these graphical elements directly into real XML document maps, fixing this disconnect."
                     ]
                 },
                 {
@@ -232,8 +232,8 @@ export const blogPosts: BlogPost[] = [
                     heading: "How Online PDF Tools Work",
                     paragraphs: ["Currently, the global array of PDF SaaS products follow two overarching processing pipelines:"],
                     list: [
-                        "1. Server-Side Processing: The payload transmits up to a remote computing server, sits temporarily in active caches, undergoes operations remotely, and transmits back.",
-                        "2. Client-Side Processing: The payload never truly moves. Source files reside directly in device RAM while client applications leverage JS/Wasm code to apply filters seamlessly."
+                        "<strong>Server-Side Processing:</strong> The payload transmits up to a remote computing server, sits temporarily in active caches, undergoes operations remotely, and transmits back.",
+                        "<strong>Client-Side Processing:</strong> The payload never truly moves. Source files reside directly in device RAM while client applications leverage JS/Wasm code to apply filters seamlessly."
                     ]
                 },
                 {
@@ -282,8 +282,8 @@ export const blogPosts: BlogPost[] = [
                 {
                     heading: "Why Email Rejects Large PDFs",
                     paragraphs: [
-                        "Email servers automatically restrict vast documents to prevent storage congestion, excessive bandwidth loads over POP3/IMAP networks, and excessive processing times parsing encodings.",
-                        "Aggressive data compression solves these systemic limits immediately by pruning invisible image metadata and streamlining font objects."
+                        "Email servers automatically restrict vast documents to <strong>prevent storage congestion</strong>, excessive bandwidth loads over POP3/IMAP networks, and excessive processing times parsing encodings.",
+                        "<strong>Aggressive data compression</strong> solves these systemic limits immediately by pruning invisible image metadata and streamlining font objects."
                     ]
                 },
                 {
