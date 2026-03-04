@@ -94,10 +94,10 @@ const BlogPostPage = () => {
                             )}
                         </header>
 
-                        <div className="text-base md:text-lg text-muted-foreground leading-relaxed md:leading-[1.9]">
+                        <div className="text-base text-muted-foreground leading-relaxed md:leading-[1.9]">
                             <div className="mb-14 space-y-6">
                                 {post.content.intro.map((paragraph, i) => (
-                                    <p key={i} className="text-lg md:text-xl font-medium text-foreground/80 leading-relaxed md:leading-[1.8]" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                    <p key={i} className="text-lg font-medium text-foreground/80 leading-relaxed md:leading-[1.8]" dangerouslySetInnerHTML={{ __html: paragraph }} />
                                 ))}
                             </div>
 
@@ -106,7 +106,7 @@ const BlogPostPage = () => {
                                     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 font-display tracking-tight">{section.heading}</h2>
                                     <div className="space-y-6">
                                         {section.paragraphs.map((p, i) => (
-                                            <p key={i} className="text-base md:text-lg text-muted-foreground leading-relaxed md:leading-[1.9]" dangerouslySetInnerHTML={{ __html: p }} />
+                                            <p key={i} className="text-base text-muted-foreground leading-relaxed md:leading-[1.9]" dangerouslySetInnerHTML={{ __html: p }} />
                                         ))}
                                         {section.list && (
                                             <ul className="space-y-4 mt-8 bg-muted/20 p-6 md:p-8 rounded-2xl border border-border/40">
@@ -115,7 +115,7 @@ const BlogPostPage = () => {
                                                         <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm mt-0.5">
                                                             {i + 1}
                                                         </span>
-                                                        <span className="text-base md:text-lg text-foreground/90 font-medium" dangerouslySetInnerHTML={{ __html: item }} />
+                                                        <span className="text-base text-foreground/90 font-medium" dangerouslySetInnerHTML={{ __html: item }} />
                                                     </li>
                                                 ))}
                                             </ul>
@@ -129,8 +129,8 @@ const BlogPostPage = () => {
                                 <div className="space-y-10">
                                     {post.content.faqs.map((faq, idx) => (
                                         <div key={idx} className="bg-background">
-                                            <h3 className="font-semibold text-lg md:text-xl text-foreground mb-3 leading-snug">{faq.question}</h3>
-                                            <p className="text-base md:text-lg text-muted-foreground leading-relaxed md:leading-[1.8] m-0" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                            <h3 className="font-semibold text-lg text-foreground mb-3 leading-snug">{faq.question}</h3>
+                                            <p className="text-base text-muted-foreground leading-relaxed md:leading-[1.8] m-0" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                                         </div>
                                     ))}
                                 </div>
@@ -139,7 +139,7 @@ const BlogPostPage = () => {
                             <section className="mt-16 pt-12 border-t border-border/50 bg-primary/5 p-8 md:p-12 rounded-[2rem]">
                                 <div className="space-y-5">
                                     {post.content.conclusion.map((paragraph, i) => (
-                                        <p key={i} className="text-lg md:text-xl font-medium text-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                        <p key={i} className="text-lg font-medium text-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph }} />
                                     ))}
                                 </div>
 
