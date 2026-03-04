@@ -1,5 +1,6 @@
 import { PDFDocument, degrees, rgb, StandardFonts } from "@cantoo/pdf-lib";
-import JSZip from "jszip";
+// Removed JSZip import
+
 import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.mjs?url";
 import Tesseract from "tesseract.js";
@@ -18,7 +19,7 @@ export async function processPdf(
   toolId: string,
   files: File[],
   options: { password?: string; watermarkText?: string; rotationAngle?: number; compressLevel?: string; searchText?: string; annotationType?: string; } = {}
-): Promise<Blob> {
+): Promise<Blob | Blob[]> {
   const readFile = (file: File) => file.arrayBuffer();
 
   switch (toolId) {
@@ -36,16 +37,16 @@ export async function processPdf(
     case "split-pdf": {
       const bytes = await readFile(files[0]);
       const doc = await PDFDocument.load(bytes);
-      const zip = new JSZip();
+      const outputBlobs: Blob[] = [];
       const pageCount = doc.getPageCount();
       for (let i = 0; i < pageCount; i++) {
         const newDoc = await PDFDocument.create();
         const [page] = await newDoc.copyPages(doc, [i]);
         newDoc.addPage(page);
         const pdfBytes = await newDoc.save();
-        zip.file(`page_${i + 1}.pdf`, pdfBytes);
+        outputBlobs.push(toBlob(pdfBytes));
       }
-      return await zip.generateAsync({ type: "blob" });
+      return outputBlobs;
     }
 
     case "rotate-pdf": {
@@ -236,7 +237,7 @@ export async function processPdf(
     case "pdf-to-jpg": {
       const bytes = await readFile(files[0]);
       const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
-      const zip = new JSZip();
+      const outputBlobs: Blob[] = [];
 
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
@@ -253,11 +254,11 @@ export async function processPdf(
 
         const blob = await new Promise<Blob | null>(resolve => canvas.toBlob(resolve, "image/png"));
         if (blob) {
-          zip.file(`page_${i}.png`, blob);
+          outputBlobs.push(blob);
         }
       }
 
-      return await zip.generateAsync({ type: "blob" });
+      return outputBlobs;
     }
 
     case "ocr-pdf": {

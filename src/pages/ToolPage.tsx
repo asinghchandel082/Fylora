@@ -20,7 +20,7 @@ const ToolPage = () => {
   const tool = getToolById(toolId || "");
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<Status>("idle");
-  const [result, setResult] = useState<Blob | null>(null);
+  const [result, setResult] = useState<Blob | Blob[] | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [options, setOptions] = useState({
@@ -77,11 +77,11 @@ const ToolPage = () => {
       const inputType = files[0]?.name.split('.').pop() || "unknown";
 
       let outputType = "pdf"; // Default assumption
-      if (blob.type === "application/zip" || toolId === "split-pdf" || toolId === "pdf-to-jpg") {
-        outputType = "zip";
-      } else if (blob.type === "text/plain") {
+      if (toolId === "split-pdf" || toolId === "pdf-to-jpg") {
+        outputType = "multiple";
+      } else if (!Array.isArray(blob) && blob.type === "text/plain") {
         outputType = "txt";
-      } else if (blob.type === "text/markdown") {
+      } else if (!Array.isArray(blob) && blob.type === "text/markdown") {
         outputType = "md";
       }
 
@@ -94,26 +94,33 @@ const ToolPage = () => {
 
   const handleDownload = useCallback(() => {
     if (!result) return;
-    const url = URL.createObjectURL(result);
-    const a = document.createElement("a");
-    a.href = url;
+    const resultsArray = Array.isArray(result) ? result : [result];
 
-    let extension = "pdf";
-    if (result.type === "application/zip" || toolId === "split-pdf" || toolId === "pdf-to-jpg") {
-      extension = "zip";
-    } else if (result.type === "text/plain") {
-      extension = "txt";
-    } else if (result.type === "text/markdown") {
-      extension = "md";
-    } else if (toolId === "pdf-to-word-alias") {
-      extension = "docx";
-    } else if (toolId === "word-to-pdf" || toolId === "jpg-to-pdf-alias") {
-      extension = "pdf";
-    }
+    resultsArray.forEach((blob, index) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
 
-    a.download = `fylora-${toolId}-result.${extension}`;
-    a.click();
-    URL.revokeObjectURL(url);
+      let extension = "pdf";
+      if (toolId === "split-pdf") {
+        extension = "pdf";
+      } else if (toolId === "pdf-to-jpg") {
+        extension = "png";
+      } else if (blob.type === "text/plain") {
+        extension = "txt";
+      } else if (blob.type === "text/markdown") {
+        extension = "md";
+      } else if (toolId === "pdf-to-word-alias") {
+        extension = "docx";
+      } else if (toolId === "word-to-pdf" || toolId === "jpg-to-pdf-alias") {
+        extension = "pdf";
+      }
+
+      const suffix = resultsArray.length > 1 ? `-${index + 1}` : "";
+      a.download = `fylora-${toolId}-result${suffix}.${extension}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
 
     // Trigger review modal if not asked this session
     if (!sessionStorage.getItem("fylora_review_done")) {

@@ -54,7 +54,7 @@ export const tools: Tool[] = [
     seoSteps: [
       { name: "Upload PDF", description: "Select the multi-page PDF document you wish to split." },
       { name: "Select Pages", description: "Specify the exact page ranges or individual pages to extract." },
-      { name: "Download Extracted PDF", description: "Process the document and download a zip file containing the separated PDF pages." }
+      { name: "Download Extracted PDF", description: "Process the document and download the separated PDF pages as individual files." }
     ],
     seoFaqs: [
       { question: "How do I split a PDF file?", answer: "Upload your file to Fylora's Split tool, input the page numbers you wish to isolate, and click process. The tool extracts those pages and provides a secure download link." },
@@ -98,11 +98,11 @@ export const tools: Tool[] = [
     seoTitle: "Convert PDF to JPG/PNG Images Free | Fylora",
     seoContent: "Transform your PDF documents into high-quality image files instantly with Fylora. Our PDF to JPG/PNG converter is designed for creators, designers, and professionals who need to extract visual assets or share documents as images. Everything happens securely on your own deviceΓÇöno data is ever uploaded to external servers. This unparalleled commitment to privacy means you can securely convert confidential briefings, design mockups, and financial statements to image formats without a second thought. Fast, free, and perfectly ad-free.",
     seoDefinition: "PDF to Image is an online conversion utility that extracts standard PDF document pages and rasterizes them into individual, high-quality JPG or PNG picture files.",
-    seoQuickAnswer: "Convert PDF pages to images securely by uploading them to Fylora's PDF to Image converter. The tool renders your pages locally and lets you download a zipped folder of sharp JPGs instantly.",
+    seoQuickAnswer: "Convert PDF pages to images securely by uploading them to Fylora's PDF to Image converter. The tool renders your pages locally and lets you download a folder of sharp JPGs instantly.",
     seoSteps: [
       { name: "Upload PDF", description: "Select the document you want to convert into images." },
       { name: "Process Conversion", description: "The local engine will rasterize the document pages into individual images." },
-      { name: "Download Images", description: "Download a ZIP package containing all your new image files." }
+      { name: "Download Images", description: "Download all your new image files individually." }
     ],
     seoFaqs: [
       { question: "How do I selectively convert PDF pages to images?", answer: "Simply upload your PDF to Fylora's converter. It will automatically process the document, providing you with a download containing every page converted into individual high-quality images." },
