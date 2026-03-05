@@ -88,7 +88,10 @@ const BlogIndexPage = () => {
                             <Button
                                 variant="outline"
                                 size="icon"
-                                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                                onClick={() => {
+                                    setCurrentPage(p => Math.max(1, p - 1));
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
                                 disabled={currentPage === 1}
                                 className="rounded-full w-12 h-12"
                             >
@@ -100,7 +103,10 @@ const BlogIndexPage = () => {
                             <Button
                                 variant="outline"
                                 size="icon"
-                                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                                onClick={() => {
+                                    setCurrentPage(p => Math.min(totalPages, p + 1));
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
                                 disabled={currentPage === totalPages}
                                 className="rounded-full w-12 h-12"
                             >

@@ -450,7 +450,7 @@ export const blogPosts: BlogPost[] = [
         slug: "top-free-pdf-tools-chromebook-users",
         metaDescription: "Discover the best free, browser-based online PDF tools explicitly optimized for Chromebook users. No Android apps or Linux installations required.",
         date: "2024-03-15",
-        featuredImage: "https://images.unsplash.com/photo-1481481600451-24ce534007b8?auto=format&fit=crop&q=80&w=1200",
+        featuredImage: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "merge-pdf",
         content: {
             intro: [
