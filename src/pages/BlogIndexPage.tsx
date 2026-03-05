@@ -90,7 +90,7 @@ const BlogIndexPage = () => {
                                 size="icon"
                                 onClick={() => {
                                     setCurrentPage(p => Math.max(1, p - 1));
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    setTimeout(() => window.scrollTo(0, 0), 10);
                                 }}
                                 disabled={currentPage === 1}
                                 className="rounded-full w-12 h-12"
@@ -105,7 +105,7 @@ const BlogIndexPage = () => {
                                 size="icon"
                                 onClick={() => {
                                     setCurrentPage(p => Math.min(totalPages, p + 1));
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    setTimeout(() => window.scrollTo(0, 0), 10);
                                 }}
                                 disabled={currentPage === totalPages}
                                 className="rounded-full w-12 h-12"
