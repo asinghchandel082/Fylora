@@ -118,14 +118,14 @@ export default function ServicesPage() {
                                 </Button>
                             </DialogTrigger>
 
-                            <DialogContent className="sm:max-w-[650px] w-[95vw] max-h-[85vh] p-0 overflow-hidden bg-background rounded-3xl border-white/10 shadow-2xl flex flex-col gap-0">
+                            <DialogContent className="sm:max-w-[700px] w-[95vw] h-[85vh] max-h-[85vh] p-0 overflow-hidden bg-background rounded-3xl border-white/10 shadow-2xl flex flex-col gap-0 pointer-events-auto">
                                 <DialogHeader className="sr-only">
                                     <DialogTitle>Contact Us</DialogTitle>
                                 </DialogHeader>
                                 <div className="h-14 w-full bg-background border-b border-border flex items-center px-6 shrink-0 relative z-10">
                                     <span className="font-display font-semibold text-lg">Get in Touch</span>
                                 </div>
-                                <div className="w-full h-[60vh] sm:h-[600px] relative bg-background flex flex-col">
+                                <div className="w-full flex-1 min-h-0 relative bg-background flex flex-col pt-2">
                                     <ContactForm />
                                 </div>
                             </DialogContent>
