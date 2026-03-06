@@ -144,10 +144,10 @@ const ServiceCard = ({ service, idx }: { service: Service; idx: number }) => {
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "100px" }}
             transition={{ duration: 0.5, ease: "easeOut", delay: (idx % 3) * 0.1 }}
             whileHover={{ y: -8, scale: 1.02 }}
-            className="group flex flex-col bg-card border border-white/5 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-auto min-h-[480px] w-[300px] md:w-[350px] shrink-0 snap-center relative"
+            className="group flex flex-col bg-card border border-white/5 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-auto min-h-[480px] w-[85vw] max-w-[320px] md:max-w-none md:w-[350px] shrink-0 snap-center relative"
         >
             <div className="w-full h-32 sm:h-40 overflow-hidden bg-muted/20 relative shrink-0">
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10 duration-500" />
@@ -292,7 +292,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Conversion CTA Section */}
-                    <div className="mt-24 md:mt-32 text-center bg-primary/5 border border-primary/20 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+                    <div className="mt-24 md:mt-32 mb-10 mx-4 sm:mx-0 text-center bg-primary/5 border border-primary/20 rounded-3xl p-8 sm:p-10 md:p-16 relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 relative z-10">
                             Let's Build Something Exceptional
@@ -323,7 +323,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* AI Search Optimized FAQ Section */}
-                    <div className="mt-24 md:mt-32 mb-10 max-w-4xl mx-auto">
+                    <div className="mt-24 md:mt-32 max-w-4xl mx-auto px-6 sm:px-0">
                         <div className="text-center mb-12">
                             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 Frequently Asked Questions
