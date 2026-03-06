@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
@@ -124,12 +125,8 @@ export default function ServicesPage() {
                                 <div className="h-14 w-full bg-background border-b border-border flex items-center px-6 shrink-0 relative z-10">
                                     <span className="font-display font-semibold text-lg">Get in Touch</span>
                                 </div>
-                                <div className="w-full h-[60vh] sm:h-[600px] relative bg-background">
-                                    <iframe
-                                        src="https://docs.google.com/forms/d/e/1FAIpQLScHG6nhR5Q0Si_tcRJaGRmDrW3HVAsK-jT9QLWMdBSnwc2eVA/viewform?embedded=true"
-                                        className="w-full h-full border-0 absolute inset-0"
-                                        title="Contact Form"
-                                    />
+                                <div className="w-full h-[60vh] sm:h-[600px] relative bg-background flex flex-col">
+                                    <ContactForm />
                                 </div>
                             </DialogContent>
                         </Dialog>
