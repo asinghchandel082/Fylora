@@ -35,7 +35,7 @@ const ToolPage = () => {
   // Dynamically update document title & meta tags upon load
   useSeo({
     title: tool?.seoTitle || "Free Online PDF Tools | Fylora",
-    description: tool?.description || "",
+    description: tool?.seoMetaDescription || tool?.description || "",
     url: `/${toolId}`,
   });
 
@@ -155,7 +155,7 @@ const ToolPage = () => {
               <Icon className="h-8 w-8 relative z-10" />
             </div>
             <div>
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">{tool.name}</h1>
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">{tool.seoH1 || tool.name}</h1>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-1">{tool.seoDefinition}</p>
               <p className="text-base text-muted-foreground/80 leading-relaxed">{tool.description}</p>
             </div>
@@ -313,6 +313,24 @@ const ToolPage = () => {
             <h2 className="font-display text-2xl font-bold text-foreground mb-4">About the {tool.name} Tool</h2>
             <p className="leading-relaxed text-base">{tool.seoContent}</p>
 
+            {/* How to Use Section */}
+            {tool.seoSteps && tool.seoSteps.length > 0 && (
+              <>
+                <h2 className="font-display text-2xl font-bold text-foreground mt-12 mb-6 text-center">How to use the {tool.name} tool</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                  {tool.seoSteps.map((step, index) => (
+                    <div key={index} id={`step-${index + 1}`} className="flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-white/5 shadow-sm relative overflow-hidden group hover:border-primary/50 transition-colors">
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full flex items-center justify-center pointer-events-none">
+                        <span className="text-2xl font-display font-bold text-primary/20 absolute top-2 right-4">{index + 1}</span>
+                      </div>
+                      <h3 className="font-display text-lg font-bold text-foreground mb-3 relative z-10">{step.name}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{step.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
             {/* Quick Answer Block for Voice Search */}
             <div className="my-10 p-6 rounded-2xl bg-primary/5 border border-primary/10">
               <h2 className="font-display text-xl font-bold text-foreground mb-3 flex items-center gap-2">
@@ -336,10 +354,10 @@ const ToolPage = () => {
             <div className="my-12 p-8 rounded-3xl bg-secondary/30 border border-white/5">
               <h2 className="font-display text-2xl font-bold text-foreground mb-6 text-center">Why choose Fylora over other PDF tools?</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0">
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>No forced sign-up:</strong> Start processing instantly.</span></li>
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>Faster processing:</strong> Harnessing local WebAssembly speeds.</span></li>
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>100% private:</strong> Your files never upload to our servers.</span></li>
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>Minimal interface:</strong> Zero annoying pop-up limits or chaotic ads.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>100% Client-Side Processing:</strong> Total privacy, files never leave your device.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>Free Without Tracking:</strong> No sign-ups required, no intrusive ads.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>Lightning Fast:</strong> No waiting for files to upload or download.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /><span><strong>Unlimited Use:</strong> We don't cap your hourly or daily usage.</span></li>
               </ul>
             </div>
 
@@ -374,6 +392,18 @@ const ToolPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@graph": [
+                {
+                  "@type": "SoftwareApplication",
+                  "name": `Fylora ${tool.name}`,
+                  "operatingSystem": "Any",
+                  "applicationCategory": "UtilitiesApplication",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  },
+                  "description": tool.seoDefinition || tool.description
+                },
                 {
                   "@type": "FAQPage",
                   "mainEntity": (tool.seoFaqs || []).map(faq => ({
