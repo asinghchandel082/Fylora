@@ -1,7 +1,6 @@
-import { useRef } from "react";
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -138,73 +137,56 @@ const services = [
 
 type Service = typeof services[0];
 
-const ServiceCard = ({ service, idx, scrollYProgress }: { service: Service; idx: number; scrollYProgress: any }) => {
-    // Elegant floating scroll effect: odd and even cards move in opposite vertical directions and at slightly different speeds
-    const direction = idx % 2 === 0 ? 1 : -1;
-    const speed = (idx % 3) + 1; // Creates slightly different speeds (1, 2, 3)
-    const yParallax = useTransform(scrollYProgress, [0, 1], [0, direction * 25 * speed]);
-
+const ServiceCard = ({ service, idx }: { service: Service; idx: number }) => {
     return (
-        <motion.div style={{ y: yParallax }} className="h-full">
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: (idx % 4) * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group flex flex-col bg-card border border-white/5 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-full relative"
-            >
-                <div className="w-full h-32 sm:h-40 overflow-hidden bg-muted/20 relative shrink-0">
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10 duration-500" />
-                    <img
-                        src={service.image}
-                        alt={service.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    />
-                </div>
-                <div className="p-5 flex flex-col flex-1 text-center justify-center relative z-20 bg-card">
-                    <h2 className="font-display font-bold text-lg md:text-xl text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
-                        {service.title}
-                    </h2>
-                    <p className="text-xs md:text-sm text-muted-foreground flex-none leading-relaxed mb-3">
-                        {service.description}
-                    </p>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: (idx % 3) * 0.1 }}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="group flex flex-col bg-card border border-white/5 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-[480px] w-[300px] md:w-[350px] shrink-0 snap-center relative"
+        >
+            <div className="w-full h-32 sm:h-40 overflow-hidden bg-muted/20 relative shrink-0">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10 duration-500" />
+                <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+            </div>
+            <div className="p-5 flex flex-col flex-1 text-center justify-center relative z-20 bg-card">
+                <h2 className="font-display font-bold text-lg md:text-xl text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                </h2>
+                <p className="text-xs md:text-sm text-muted-foreground flex-none leading-relaxed mb-3">
+                    {service.description}
+                </p>
 
-                    <div className="text-left text-xs text-muted-foreground/80 space-y-3 pb-3 border-b border-white/5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <p className="font-medium text-foreground/80 mb-1">{service.definition}</p>
-                            <p className="[&>a]:text-primary [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:text-primary/80 transition-colors" dangerouslySetInnerHTML={{ __html: service.paragraph }} />
-                        </div>
-                        <div className="mt-3">
-                            <strong className="text-foreground/80 block mb-1">Deliverables:</strong>
-                            <ul className="list-disc pl-4 space-y-0.5">
-                                {service.deliverables.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
+                <div className="text-left text-xs text-muted-foreground/80 space-y-3 pb-3 border-b border-white/5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p className="font-medium text-foreground/80 mb-1">{service.definition}</p>
+                        <p className="[&>a]:text-primary [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:text-primary/80 transition-colors" dangerouslySetInnerHTML={{ __html: service.paragraph }} />
                     </div>
-                    <p className="text-left text-xs font-semibold text-primary pt-3 leading-tight mt-auto">
-                        Benefits: <span className="text-primary/80 font-normal">{service.benefits}</span>
-                    </p>
+                    <div className="mt-3">
+                        <strong className="text-foreground/80 block mb-1">Deliverables:</strong>
+                        <ul className="list-disc pl-4 space-y-0.5">
+                            {service.deliverables.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-            </motion.div>
+                <p className="text-left text-xs font-semibold text-primary pt-3 leading-tight mt-auto">
+                    Benefits: <span className="text-primary/80 font-normal">{service.benefits}</span>
+                </p>
+            </div>
         </motion.div>
     );
 };
 
 export default function ServicesPage() {
-    const containerRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-    const heroY = useTransform(scrollYProgress, [0, 0.4], ["0%", "20%"]);
-    const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
@@ -244,14 +226,13 @@ export default function ServicesPage() {
                 </script>
             </Helmet>
 
-            <section ref={containerRef} className="relative overflow-hidden pt-8 pb-12 md:pt-16 md:pb-20 flex flex-col items-center">
-                <motion.div
-                    style={{ y: bgY }}
+            <section className="relative overflow-hidden pt-8 pb-12 md:pt-16 md:pb-20 flex flex-col items-center">
+                <div
                     className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none animate-[pulse_8s_ease-in-out_infinite]"
                 />
 
-                <div className="container relative z-10 px-6 max-w-7xl mx-auto">
-                    <motion.div style={{ y: heroY, opacity: heroOpacity }} className="text-center mb-10 max-w-3xl mx-auto">
+                <div className="container relative z-10 px-0 sm:px-6 max-w-7xl mx-auto">
+                    <div className="text-center mb-10 max-w-3xl mx-auto px-6 sm:px-0">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -268,12 +249,19 @@ export default function ServicesPage() {
                         >
                             Partner with us to transform your ideas into exceptional digital experiences. From web development to advanced AI solutions.
                         </motion.p>
-                    </motion.div>
+                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 relative z-20">
-                        {services.map((service, idx) => (
-                            <ServiceCard key={service.title} service={service} idx={idx} scrollYProgress={scrollYProgress} />
-                        ))}
+                    {/* Horizontal Snapping Carousel */}
+                    <div className="relative w-full overflow-hidden">
+                        {/* Gradient Masks for edges to indicate scorllability on desktop */}
+                        <div className="hidden md:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-30 pointer-events-none" />
+                        <div className="hidden md:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-30 pointer-events-none" />
+
+                        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-10 pt-4 px-6 md:px-16 scrollbar-hide py-4 items-center">
+                            {services.map((service, idx) => (
+                                <ServiceCard key={service.title} service={service} idx={idx} />
+                            ))}
+                        </div>
                     </div>
 
                     <div className="mt-16 text-center">
