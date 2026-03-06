@@ -88,6 +88,7 @@ const BlogPostPage = () => {
                                     <img
                                         src={post.featuredImage}
                                         alt={`Featured artwork for ${post.title}`}
+                                        loading="lazy"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
