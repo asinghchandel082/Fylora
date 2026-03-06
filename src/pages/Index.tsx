@@ -67,23 +67,13 @@ const Index = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none animate-[pulse_10s_ease-in-out_infinite_reverse]" />
         <div className="absolute inset-0 bg-[image:var(--fylora-gradient-soft)] opacity-40 dark:opacity-20" />
         <div className="relative container z-10 max-w-5xl mx-auto px-[75px] max-sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background border border-border shadow-sm text-sm font-medium mb-6"
-            >
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background border border-border shadow-sm text-sm font-medium mb-6 animate-slide-up" style={{ animationDelay: '200ms', animationFillMode: 'both' }}>
               <Shield className="h-4 w-4 text-primary" />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
                 100% Private & Client-Side
               </span>
-            </motion.div>
+            </div>
             <h1 className="font-display font-bold text-foreground leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-balance flex flex-col items-center text-center">
               <span>Free Online PDF Tools</span>
               <span className="block w-full text-center fylora-gradient-text mt-1 sm:mt-2">
@@ -93,12 +83,7 @@ const Index = () => {
             <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed font-light">
               Merge, split, compress, convert, and protect. The fastest PDF studio that never uploads your files to a server.
             </p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '400ms', animationFillMode: 'both' }}>
               <Button asChild size="lg" className="h-14 px-8 rounded-full fylora-gradient-bg fylora-shadow-primary text-white font-medium text-lg hover:scale-105 transition-transform duration-300">
                 <Link to="/tools">
                   Explore Tools
@@ -108,8 +93,8 @@ const Index = () => {
               <Button asChild variant="outline" size="lg" className="h-14 px-8 rounded-full font-medium text-lg border-2 hover:bg-muted/50 transition-colors">
                 <Link to="/about">How it works</Link>
               </Button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 

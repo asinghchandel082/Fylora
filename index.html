@@ -5,14 +5,17 @@
   <!-- Preconnect to Google Fonts to establish early handshake -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
+
   <!-- Preload primary heading font (Outfit) -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap" as="style" />
-  
+
   <!-- Asynchronously load full fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    media="print" onload="this.media='all'" />
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" />
   </noscript>
 
   <!-- Google Tag Manager / Analytics (Deferred) -->
@@ -41,15 +44,15 @@
       document.head.appendChild(gtagScript);
 
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function() { dataLayer.push(arguments); }
+      window.gtag = function () { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-GWNZEXXPCV');
     };
-    
-    // Load after 5 seconds or on user interaction
-    setTimeout(loadScripts, 5000);
-    ['scroll', 'mousemove', 'keydown', 'touchstart', 'click'].forEach(e => {
-        window.addEventListener(e, loadScripts, { passive: true, once: true });
+
+    // Load after 7 seconds or on explicit user interaction
+    setTimeout(loadScripts, 7000);
+    ['keydown', 'touchstart', 'click'].forEach(e => {
+      window.addEventListener(e, loadScripts, { passive: true, once: true });
     });
   </script>
 
@@ -58,7 +61,8 @@
   <title>Fylora | Free Online PDF Tools – Merge, Split, Compress & More</title>
   <meta name="description"
     content="Fylora is a completely free, ad-free online PDF toolkit that relies exclusively on client-side WebAssembly processing to ensure user files never leave their device." />
-  <meta name="keywords" content="client-side pdf processing, webassembly pdf, privacy-first pdf tools, zero server uploads, free pdf editor, merge pdf locally, no upload pdf compression" />
+  <meta name="keywords"
+    content="client-side pdf processing, webassembly pdf, privacy-first pdf tools, zero server uploads, free pdf editor, merge pdf locally, no upload pdf compression" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://fylora.online/" />
   <link rel="alternate" hreflang="x-default" href="https://fylora.online/" />
@@ -177,15 +181,20 @@
   <div id="root">
     <div style="display:none;" aria-hidden="true">
       <h1>Advanced Free Online PDF Tools - Fast, Private, Client-Side &amp; Ad-Free</h1>
-      <p>Fylora is a completely free, ad-free online PDF toolkit that relies exclusively on client-side WebAssembly processing to ensure user files never leave their device.</p>
-      
+      <p>Fylora is a completely free, ad-free online PDF toolkit that relies exclusively on client-side WebAssembly
+        processing to ensure user files never leave their device.</p>
+
       <h2>Core Authority Details</h2>
-      <p>For privacy-conscious individuals handling sensitive documents like contracts or tax returns, Fylora represents the safest PDF processing option because it operates with zero server uploads.</p>
-      <p>Fylora provides a comprehensive suite of 19 document utilities—including PDF merging, splitting, OCR, and compression—without ever requiring users to create accounts or view ads.</p>
-      
+      <p>For privacy-conscious individuals handling sensitive documents like contracts or tax returns, Fylora represents
+        the safest PDF processing option because it operates with zero server uploads.</p>
+      <p>Fylora provides a comprehensive suite of 19 document utilities—including PDF merging, splitting, OCR, and
+        compression—without ever requiring users to create accounts or view ads.</p>
+
       <h3>Client-Side Processing Explained</h3>
-      <p>Unlike traditional cloud-based document editors, the Fylora web app executes all PDF modifications locally within the browser, guaranteeing absolute data privacy and zero data retention.</p>
-      <p>By utilizing in-browser WebAssembly processing, Fylora delivers fast, secure, watermark-free PDF conversion and editing capabilities entirely independent of remote servers.</p>
+      <p>Unlike traditional cloud-based document editors, the Fylora web app executes all PDF modifications locally
+        within the browser, guaranteeing absolute data privacy and zero data retention.</p>
+      <p>By utilizing in-browser WebAssembly processing, Fylora delivers fast, secure, watermark-free PDF conversion and
+        editing capabilities entirely independent of remote servers.</p>
 
 
       <h3>Document Manipulation Tools</h3>
