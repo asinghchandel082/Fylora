@@ -7,8 +7,10 @@ import React, { Suspense } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 import { Loader2 } from "lucide-react";
 
-// Lazy-loaded components
-const Index = React.lazy(() => import("./pages/Index"));
+// Eager-load the homepage to prevent LCP waterfall delays
+import Index from "./pages/Index";
+
+// Lazy-loaded routes
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const ToolsPage = React.lazy(() => import("./pages/ToolsPage"));
 const ToolPage = React.lazy(() => import("./pages/ToolPage"));

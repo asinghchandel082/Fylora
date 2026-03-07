@@ -31,8 +31,17 @@ export const initAnalytics = () => {
         w.gtag('config', 'G-GWNZEXXPCV');
     };
 
-    // Load strictly on user interaction to avoid Lighthouse main-thread blocks
-    ['keydown', 'touchstart', 'click', 'scroll', 'pointerover'].forEach(e => {
-        window.addEventListener(e, loadScripts, { passive: true, once: true });
+    // Use requestIdleCallback to ensure we don't block the main thread even after interaction
+    const loadIdle = () => {
+        if ('requestIdleCallback' in window) {
+            (window as any).requestIdleCallback(loadScripts, { timeout: 2000 });
+        } else {
+            setTimeout(loadScripts, 500);
+        }
+    };
+
+    // Load strictly on deliberate user interaction, avoiding passive hover/touch bugs
+    ['click', 'scroll'].forEach(e => {
+        window.addEventListener(e, loadIdle, { passive: true, once: true });
     });
 };

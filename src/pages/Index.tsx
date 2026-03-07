@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { tools } from "@/lib/tools";
 import Layout from "@/components/Layout";
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useSeo } from "@/hooks/useSeo";
 
@@ -20,6 +20,26 @@ const Index = () => {
   const featuredToolIds = ["merge-pdf", "split-pdf", "compress-pdf", "word-to-pdf", "pdf-to-word-alias", "jpg-to-pdf-alias", "protect-pdf", "repair-pdf"];
   const featuredTools = featuredToolIds.map(id => tools.find(t => t.id === id)).filter(Boolean);
   const [reviewIndex, setReviewIndex] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(true);
+      window.removeEventListener("scroll", handleScroll, { capture: true });
+    };
+    if (window.scrollY > 0) {
+      setHasScrolled(true);
+    } else {
+      window.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+      window.addEventListener("click", handleScroll, { passive: true, capture: true, once: true });
+      window.addEventListener("touchstart", handleScroll, { passive: true, capture: true, once: true });
+    }
+    return () => {
+      window.removeEventListener("scroll", handleScroll, { capture: true });
+      window.removeEventListener("click", handleScroll, { capture: true });
+      window.removeEventListener("touchstart", handleScroll, { capture: true });
+    };
+  }, []);
 
   useSeo({
     title: "Fylora | Free Online PDF Tools – Merge, Split, Compress & More",
@@ -29,6 +49,7 @@ const Index = () => {
 
   const { data: reviews = [] } = useQuery({
     queryKey: ['homepage-reviews'],
+    enabled: hasScrolled,
     queryFn: async () => {
       try {
         const { collection, query, where, getDocs } = await import("firebase/firestore");
