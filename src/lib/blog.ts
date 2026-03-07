@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
         title: "How to Compress a PDF Without Losing Quality (Fast & Secure Method)",
         slug: "compress-pdf-without-losing-quality",
         metaDescription: "Learn how to compress a PDF without losing quality using a fast, secure, and completely private method via WebAssembly. No login required.",
-        date: "2024-03-01",
+        date: "2026-03-02",
         featuredImage: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "compress-pdf",
         content: {
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
         title: "How to Merge PDF Files Online for Free (No Sign-Up Required)",
         slug: "merge-pdf-files-online-free",
         metaDescription: "Learn how to merge multiple PDF files into one document online for free using 100% local, client-side processing. Secure, fast, and no account needed.",
-        date: "2024-03-02",
+        date: "2026-03-03",
         featuredImage: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "merge-pdf",
         content: {
@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
         title: "Convert PDF to Word Without Losing Formatting (Easy Guide)",
         slug: "convert-pdf-to-word-without-formatting-loss",
         metaDescription: "Convert PDF to Word without losing formatting using a highly secure, client-side WebAssembly method. Step-by-step instructions included.",
-        date: "2024-03-03",
+        date: "2026-03-03",
         featuredImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "pdf-to-word-alias",
         content: {
@@ -220,7 +220,7 @@ export const blogPosts: BlogPost[] = [
         title: "Is It Safe to Use Online PDF Tools? (Security Explained)",
         slug: "is-it-safe-to-use-online-pdf-tools",
         metaDescription: "Are online PDF tools actually safe? Learn exactly how file processing works and how to protect your sensitive documents when using online web tools.",
-        date: "2024-03-04",
+        date: "2026-03-04",
         featuredImage: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "protect-pdf",
         content: {
@@ -270,7 +270,7 @@ export const blogPosts: BlogPost[] = [
         title: "How to Reduce PDF File Size for Email (Under 10MB Fast)",
         slug: "reduce-pdf-size-for-email",
         metaDescription: "Learn how to instantly reduce a PDF file size for email limits (under 10MB) using a fast, totally secure client-side compression method.",
-        date: "2024-03-05",
+        date: "2026-03-04",
         featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "compress-pdf",
         content: {
@@ -324,7 +324,7 @@ export const blogPosts: BlogPost[] = [
         title: "Why Client-Side PDF Tools Are the Future of Digital Privacy",
         slug: "client-side-pdf-tools-digital-privacy",
         metaDescription: "Discover why client-side, zero-upload PDF tools are replacing cloud software for managing sensitive documents. Learn how WebAssembly secures your privacy.",
-        date: "2024-03-08",
+        date: "2026-03-05",
         featuredImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "protect-pdf",
         content: {
@@ -387,7 +387,7 @@ export const blogPosts: BlogPost[] = [
         title: "How WebAssembly is Replacing Slow Server Uploads for PDF Processing",
         slug: "webassembly-replacing-slow-server-uploads",
         metaDescription: "Learn how WebAssembly (Wasm) enables blazing-fast, serverless PDF editing in your browser, eliminating painful upload times and securing data.",
-        date: "2024-03-12",
+        date: "2026-03-05",
         featuredImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "split-pdf",
         content: {
@@ -449,7 +449,7 @@ export const blogPosts: BlogPost[] = [
         title: "Top 5 Free PDF Tools for Chromebook Users (No Apps Required)",
         slug: "top-free-pdf-tools-chromebook-users",
         metaDescription: "Discover the best free, browser-based online PDF tools explicitly optimized for Chromebook users. No Android apps or Linux installations required.",
-        date: "2024-03-15",
+        date: "2026-03-06",
         featuredImage: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "merge-pdf",
         content: {
@@ -523,7 +523,7 @@ export const blogPosts: BlogPost[] = [
         title: "How to Split a Large PDF File into Multiple Pages (Free & Private Method)",
         slug: "how-to-split-large-pdf-multiple-pages",
         metaDescription: "Learn how to split large PDF files into multiple or separate pages instantly. A completely free, private, and fast solution without installing software.",
-        date: "2024-03-20",
+        date: "2026-03-06",
         featuredImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "split-pdf",
         content: {
@@ -585,7 +585,7 @@ export const blogPosts: BlogPost[] = [
         title: "How to Add a Watermark to a PDF Document Online (Confidentiality Guide)",
         slug: "add-watermark-to-pdf-online-guide",
         metaDescription: "Add a watermark to your PDF documents online for free. Learn how to securely stamp 'Confidential' or 'Draft' across your private files locally in your browser.",
-        date: "2024-03-22",
+        date: "2026-03-07",
         featuredImage: "https://images.unsplash.com/photo-1616628188550-808682f3926d?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "watermark-pdf",
         content: {
@@ -646,7 +646,7 @@ export const blogPosts: BlogPost[] = [
         title: "Can I Convert a PDF to JPG? (Best Free Tools Explained)",
         slug: "can-i-convert-pdf-to-jpg-free",
         metaDescription: "Yes, you can easily convert a PDF to JPG. Discover the fastest, most secure, and completely free methods for extracting high-quality images from your PDF files.",
-        date: "2024-03-25",
+        date: "2026-03-07",
         featuredImage: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&q=80&w=1200",
         relatedToolId: "pdf-to-jpg",
         content: {
