@@ -17,8 +17,12 @@ const BlogIndexPage = () => {
     });
 
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
-    const currentPosts = blogPosts.slice(
+
+    // Sort posts by date in descending order (newest first)
+    const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+    const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+    const currentPosts = sortedPosts.slice(
         (currentPage - 1) * POSTS_PER_PAGE,
         currentPage * POSTS_PER_PAGE
     );
