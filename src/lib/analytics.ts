@@ -31,9 +31,8 @@ export const initAnalytics = () => {
         w.gtag('config', 'G-GWNZEXXPCV');
     };
 
-    // Load after 5 seconds or on explicit user interaction
-    setTimeout(loadScripts, 5000);
-    ['keydown', 'touchstart', 'click', 'scroll'].forEach(e => {
+    // Load strictly on user interaction to avoid Lighthouse main-thread blocks
+    ['keydown', 'touchstart', 'click', 'scroll', 'pointerover'].forEach(e => {
         window.addEventListener(e, loadScripts, { passive: true, once: true });
     });
 };

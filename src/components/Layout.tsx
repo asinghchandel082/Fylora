@@ -260,7 +260,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-sm">
                 A modern, privacy-first PDF toolkit designed for everyday work. Built to be fast, secure, and thoughtfully simple.
               </p>
-              <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-sm font-medium text-green-600 dark:text-green-400">
+              <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-sm font-medium text-green-800 dark:text-green-300">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 Files are processed securely and deleted automatically.
               </div>
