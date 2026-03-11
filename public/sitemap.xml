@@ -169,6 +169,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fylora.online/blog/extract-text-from-pdf-images-ocr</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/redact-pdf-securely-privately</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/convert-pdf-to-markdown-developers</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/flatten-pdf-prevent-editing</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/repair-corrupted-pdf-file</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fylora.online/blog/unlock-password-protected-pdf-secure</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fylora.online/merge-pdf-online</loc>
     <priority>0.8</priority>
   </url>

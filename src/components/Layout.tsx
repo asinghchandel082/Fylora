@@ -309,6 +309,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           </div>
 
+          {/* MASSIVE SEO BACKLINKS GRID */}
+          <div className="mt-16 pt-10 border-t border-white/5">
+            <h4 className="font-display font-semibold text-foreground text-sm tracking-wide mb-6">Popular Tools & Regional Services</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-3.5 text-xs">
+              <Link to="/merge-pdf" className="text-muted-foreground hover:text-primary transition-colors">Best PDF Merger Online</Link>
+              <Link to="/compress-pdf" className="text-muted-foreground hover:text-primary transition-colors">Compress PDF for Email</Link>
+              <Link to="/pdf-to-md" className="text-muted-foreground hover:text-primary transition-colors">Convert PDF to Markdown Free</Link>
+              <Link to="/redact-pdf" className="text-muted-foreground hover:text-primary transition-colors">Redact PDF Privately</Link>
+              <Link to="/tools" className="text-muted-foreground hover:text-primary transition-colors">WebAssembly PDF Editor</Link>
+              <Link to="/unlock-pdf" className="text-muted-foreground hover:text-primary transition-colors">Unlock PDF Without Password</Link>
+              <Link to="/split-pdf" className="text-muted-foreground hover:text-primary transition-colors">Client-Side PDF Splitter</Link>
+              <Link to="/watermark-pdf" className="text-muted-foreground hover:text-primary transition-colors">Add Watermark to PDF</Link>
+              <Link to="/ocr-pdf" className="text-muted-foreground hover:text-primary transition-colors">Free OCR for PDF</Link>
+              <Link to="/flatten-pdf" className="text-muted-foreground hover:text-primary transition-colors">Flatten PDF Form Fields</Link>
+              <Link to="/repair-pdf" className="text-muted-foreground hover:text-primary transition-colors">Repair Corrupted PDF Online</Link>
+              <Link to="/verify-signature" className="text-muted-foreground hover:text-primary transition-colors">Verify PDF Digital Signature</Link>
+              <Link to="/protect-pdf" className="text-muted-foreground hover:text-primary transition-colors">Secure PDF Password Protect</Link>
+              <Link to="/pdf-to-jpg" className="text-muted-foreground hover:text-primary transition-colors">Extract Images from PDF</Link>
+              <Link to="/remove-pages" className="text-muted-foreground hover:text-primary transition-colors">Remove PDF Pages Easy</Link>
+              <Link to="/rotate-pdf" className="text-muted-foreground hover:text-primary transition-colors">Rotate PDF Pages Fast</Link>
+              <Link to="/merge-pdf" className="text-muted-foreground hover:text-primary transition-colors">Combine PDF Files Mac</Link>
+              <Link to="/compress-pdf" className="text-muted-foreground hover:text-primary transition-colors">Shrink PDF File Size Windows</Link>
+              <Link to="/ocr-pdf" className="text-muted-foreground hover:text-primary transition-colors">PDF Text Extractor AI</Link>
+              <Link to="/remove-pages" className="text-muted-foreground hover:text-primary transition-colors">How to Delete PDF Pages</Link>
+              <Link to="/tools" className="text-muted-foreground hover:text-primary transition-colors">PDF Utilities No Upload</Link>
+              <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">100% Local PDF Processing</Link>
+              <Link to="/security" className="text-muted-foreground hover:text-primary transition-colors">Enterprise Grade PDF Security</Link>
+              <Link to="/tools" className="text-muted-foreground hover:text-primary transition-colors">Free PDF Tools for Students</Link>
+            </div>
+          </div>
+
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-sm text-muted-foreground md:flex-1">
               &copy; 2026 Fylora. Built with care for privacy and performance.
